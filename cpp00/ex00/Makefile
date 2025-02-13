@@ -6,7 +6,7 @@
 #    By: ctacconi <ctacconi@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/12 17:54:50 by ctacconi          #+#    #+#              #
-#    Updated: 2025/02/12 18:01:40 by ctacconi         ###   ########.fr        #
+#    Updated: 2025/02/13 18:23:57 by ctacconi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRC =
 
 CC = cc+
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -std+c++98 -pedantic
 
 HEAD = 
 
