@@ -10,20 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream> //to use cout
-#include <cctype>
-#include <string>
-//std es un namespace, que tiene definidos objetos y f(x) como cout, cin, endl, string, vector,,,
-//int main()
-//{ //insertion operator << to output/print text
-//	std::cout << "Hello Carola!" << std::endl; //sin \n
-//	return (0);
-//}
-
-//si no hay args
-//* LOUD AND UNBEARABLE FEEDBACK NOISE *
-//si meto frase en min, pasa a MAY
-
+#include <iostream>
+//#include <cctype>
 
 int main(int argc, char **argv)
 {
@@ -31,10 +19,11 @@ int main(int argc, char **argv)
 	{
 		for (int i = 1; i < argc; i++)
 		{
-			for (int j = 0; argv; j++)
+			for (int j = 0; argv[i][j] != '\0'; j++)
 				argv[i][j] = std::toupper(argv[i][j]);
-			std::cout << argv[i];
+			std::cout << argv[i] << " ";
 		}
+		std::cout << std::endl;
 	}
 	else
 		std::cout << "* LOUD AND UBEARABLE FEEDBACK NOISE *" << std::endl;

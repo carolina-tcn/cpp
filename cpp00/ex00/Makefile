@@ -12,24 +12,22 @@
 
 NAME = megaphone
 
-SRC = 
+SRC = megaphone.cpp
 
-CC = cc+
+CC = c++
 
-FLAGS = -Wall -Wextra -Werror -std+c++98 -pedantic
+FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
-HEAD = 
-
-OBJ = $(SRC:.c=.o)
+OBJ = $(SRC:.cpp=.o)
 
 RM = rm -f
 
-%.o: %.c Makefile $(HEAD)
+%.o: %.cpp
 	$(CC) $(FLAGS) -c $< -o $@
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) Makefile
 	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
 clean:
