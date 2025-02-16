@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <iostream>
-//#include <cctype>
+#include <cctype>
 
 int main(int argc, char **argv)
 {
