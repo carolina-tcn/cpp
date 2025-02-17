@@ -1,7 +1,9 @@
-#ifndef CONTACT_CLASS_H
-# define CONTACT_CLASS_H
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
 #include <string>
+
+#include <iomanip>
 
 class Contact
 {
@@ -11,10 +13,11 @@ class Contact
 		std::nickname;
 		std::string phone_number; //string o array de int¿?
 	public:
-		//Método para add contact
-		//Método para search contact
+		Contact();
+		void NewContact();//Método para add contact
+		void ShowContact();//Método para search contact
 			//SETFILL <iomanip> 10 chars
-
+		~Contact();
 };
 
 #endif

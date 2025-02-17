@@ -1,20 +1,19 @@
-#ifndef PHONEBOOK_CLASS_HPP
-# define PHONEBOOK_CLASS_HPP
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
 #include "Contact.hpp"
 
 class PhoneBook
 {
 	private:
-		Contact contacts;
+		Contact contacts[8];
+		int index;
 	public:
-		PhoneBook(); //constructor solo lo declaro y lo defino en el .cpp
+		PhoneBook(); //constructor solo lo declaro en .hpp y lo defino en el .cpp
 		void AddContact();
 		void PrintContact();
 		void SearchContact();
-		~PhoneBook(); //destructos
-	//Método para ADD contact y reemplazar el último contacto
-	//por el mas reciente
+		~PhoneBook(); //destructor
 };
 
 #endif
