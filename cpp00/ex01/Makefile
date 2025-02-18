@@ -12,19 +12,19 @@
 
 NAME = phonebook
 
-SRC = PhoneBook.cpp Contact.cpp main.cpp PhoneBook_utils.cpp
+SRC = main.cpp # PhoneBook.cpp Contact.cpp 
 
 CC = g++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
-HEAD = PhoneBook.hpp Contact.hpp PhoneBook_utils.hpp
+# HEAD = PhoneBook.hpp Contact.hpp PhoneBook_utils.hpp
 
 OBJ = $(SRC:.cpp=.o)
 
 RM = rm -f
 
-%.o: %.cpp Makefile $(HEAD)
+%.o: %.cpp Makefile #$(HEAD)
 	$(CC) $(FLAGS) -c $< -o $@
 
 all: $(NAME)

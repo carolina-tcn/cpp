@@ -2,7 +2,7 @@
 # define CONTACT_HPP
 
 #include <string>
-
+#include <iostream>
 #include <iomanip>
 
 class Contact
@@ -10,12 +10,13 @@ class Contact
 	private:
 		std::string first_name;
 		std::string last_name;
-		std::nickname;
-		std::string phone_number; //string o array de int¿?
+		std::string nickname;
+		std::string phone_number;
+		std::string darkest_secret;
 	public:
 		Contact();
-		void NewContact();//Método para add contact
-		void ShowContact();//Método para search contact
+		void NewContact();
+		void ShowContact();
 			//SETFILL <iomanip> 10 chars
 		~Contact();
 };
