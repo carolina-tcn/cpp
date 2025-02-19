@@ -1,7 +1,6 @@
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook()
+PhoneBook::PhoneBook() : _index(0) {}
 {
-	index = 0;
-	std::cout << "Creo un objeto PhoneBook e inicializo idx = 0" << std::endl;
+	
 }

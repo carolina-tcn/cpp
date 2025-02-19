@@ -5,31 +5,29 @@
 
 int main()
 {
-	//PhoneBook newPhoneBook; instancia!
-	std::string command;
+	//PhoneBook newPhoneBook; creo la instancia.
+	std::string input;
 
 	//print commands
-	std::cout << "*Welcome to my PhoneBook*" << std::endl
+	std::cout << std::setw(10) << "*Welcome to my PhoneBook*" << std::endl
 			  << "This program only accepts ADD, SEARCH and EXIT." << std::endl
 			  << "Now is your turn: ";
-
-	std::getline(std::cin, command);
-	std::cout << "Your input is: " << command << std::endl;
 	
-	/*while (true)
+	while (true)
 	{
-		if (command == "EXIT")
+		// si uso cin antes ---> std::cin.ignore();
+		std::getline(std::cin, input);
+		std::cout << "Your input is: " << input << std::endl;
+		if (input == "EXIT")
+			return (0);
+		else if (input== "ADD")
 		{
-
+			break;
 		}
-		else if (command == "ADD")
+		else if (input == "SEARCH")
 		{
-
-		}
-		else if (command == "SEARCH")
-		{
-
+			break;
 		}	
-	}*/
+	}
 	return (0);
 }
