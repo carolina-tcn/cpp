@@ -7,14 +7,12 @@ int main()
 {
 	//PhoneBook newPhoneBook; creo la instancia.
 	std::string input;
-
-	//print commands
-	std::cout << std::setw(10) << "*Welcome to my PhoneBook*" << std::endl
-			  << "This program only accepts ADD, SEARCH and EXIT." << std::endl
-			  << "Now is your turn: ";
 	
 	while (true)
 	{
+
+		std::cout << std::setw(10) << "*Welcome to my PhoneBook*" << std::endl
+				  << "Enter a command: ADD, SEARCH or EXIT: "
 		// si uso cin antes ---> std::cin.ignore();
 		std::getline(std::cin, input);
 		std::cout << "Your input is: " << input << std::endl;
