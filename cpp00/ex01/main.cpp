@@ -1,31 +1,39 @@
+#include <iostream>
+#include <string>
 //#include "PhoneBook.hpp"
 //#include "Contact.hpp"
-#include <iostream>
+
+
 //ctrl+v + ctr+m y ctr+d
 
+void toupper_string(std::string& command)
+{
+	for(size_t i = 0; i < command.length(); ++i)
+		command[i] = std::toupper(command[i]);
+
+}
 int main()
 {
-	//PhoneBook newPhoneBook; creo la instancia.
-	std::string input;
+	//PhoneBook phonebook; //creo la instancia.
+	std::string command;
 	
 	while (true)
 	{
-
-		std::cout << std::setw(10) << "*Welcome to my PhoneBook*" << std::endl
-				  << "Enter a command: ADD, SEARCH or EXIT: "
-		// si uso cin antes ---> std::cin.ignore();
-		std::getline(std::cin, input);
-		std::cout << "Your input is: " << input << std::endl;
-		if (input == "EXIT")
-			return (0);
-		else if (input== "ADD")
-		{
+		std::cout << "\n\t\t*Welcome to my PhoneBook*\n" << std::endl
+				  << "Enter a command --> ADD, SEARCH or EXIT: ";
+		std::getline(std::cin, command);	
+		toupper_string(command);
+	
+		if (command == "EXIT")
+			break;
+		else if (command == "ADD")
+			phonebook.addContact();
+		else if (command == "SEARCH")
+		{	//phonebook.searchContact();
 			break;
 		}
-		else if (input == "SEARCH")
-		{
-			break;
-		}	
+		else
+			std::cout << "Invalid command" << std::endl;
 	}
 	return (0);
 }
