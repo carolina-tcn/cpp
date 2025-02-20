@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-//#include "PhoneBook.hpp"
+#include "PhoneBook.hpp"
 //#include "Contact.hpp"
 
 
@@ -14,13 +14,13 @@ void toupper_string(std::string& command)
 }
 int main()
 {
-	//PhoneBook phonebook; //creo la instancia.
+	PhoneBook phonebook; //creo la instancia.
 	std::string command;
 	
 	while (true)
 	{
-		std::cout << "\n\t\t*Welcome to my PhoneBook*\n" << std::endl
-				  << "Enter a command --> ADD, SEARCH or EXIT: ";
+		std::cout << "\n\t\t*🔎 Welcome to my PhoneBook 📞*\n" << std::endl
+			 << "Enter a command --> ADD, SEARCH or EXIT: ";
 		std::getline(std::cin, command);	
 		toupper_string(command);
 	
@@ -29,11 +29,9 @@ int main()
 		else if (command == "ADD")
 			phonebook.addContact();
 		else if (command == "SEARCH")
-		{	//phonebook.searchContact();
-			break;
-		}
+			phonebook.searchContact();
 		else
-			std::cout << "Invalid command" << std::endl;
+			std::cout << "❌ Invalid command" << std::endl;
 	}
 	return (0);
 }

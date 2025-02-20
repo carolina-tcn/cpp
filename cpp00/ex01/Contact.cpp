@@ -2,25 +2,51 @@
 
 Contact::Contact() : first_name(""), last_name(""), nickname(""), phone_number(""), darkest_secret("") {}
 
-void Contact::setContact()
+std::string Contact::getFirst_name() const
 {
-	std::cout << "Enter First Name: ";
-	std::getline(std::cin, first_name);
-	std::cout << "Enter Last Name: ";
-	std::getline(std::cin, last_name);
-	std::cout << "Enter Nickame: ";
-	std::getline(std::cin, nickname);
-	std::cout << "Enter Phone number: ";
-	std::getline(std::cin, phone_number);
-	std::cout << "Enter Darkest secret: ";
-	std::getline(std::cin, darkest_secret);
+	return (first_name);
 }
 
-void Contact::displayContact() const
+std::string Contact::getLast_name() const
+{
+	return (last_name);
+}
+
+std::string Contact::getNickname() const
+{
+	return (nickname);
+}
+
+void Contact::getInput(const std::string &prompt, std::string &input)
+{
+	while(true)
+	{
+		std::cout << prompt;
+		std::getline(std::cin, input);
+		if (input.empty())
+			std::cout << "❌ A saved contact can’t have empty fields.\n";
+		else
+			break;
+	}
+}
+
+void Contact::setContact()
+{
+	getInput("\nEnter First Name: ", first_name);
+	getInput("Enter Last Name: ", last_name);
+	getInput("Enter Nickame: ", nickname);
+	getInput("Enter Phone number: ", phone_number);
+	getInput("Enter First Name: ", darkest_secret);
+}
+
+/*void Contact::displayContact()
 {
 	std::cout << "First Name: " << first_name << std::endl;
 	std::cout << "Last Name: " << last_name << std::endl;
 	std::cout << "Nickname: " << nickname << std::endl;
 	std::cout << "Phone number: " << phone_number << std::endl;
 	std::cout << "Darkest secret: " << darkest_secret << std::endl;
-}
+}*/
+
+
+

@@ -16,12 +16,12 @@ class Contact
 	public:
 		Contact();
 		void setContact();
-		void displayContact() const;
-		~Contact();
+		void getInput(const std::string &prompt, std::string &input);
+		//void displayContact() const;
 
-		std::string getfirst_name() const;
-		std::string getlast_name() const;
-		std::string getnickname() const;
+		std::string getFirst_name() const;
+		std::string getLast_name() const;
+		std::string getNickname() const;
 };
 
 #endif

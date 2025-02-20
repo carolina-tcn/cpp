@@ -1,6 +1,7 @@
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
+#include <iomanip>
 #include "Contact.hpp"
 
 #define MAX_CONTACTS 8
@@ -14,11 +15,12 @@ class PhoneBook
 
 	public:
 		PhoneBook();
-		~PhoneBook();
 
 		void addContact();
-		void searchContact() const;
-		
+		void searchContact();
+		void displaySavedContacts() const;
+
+		std::string formatWidth(const std::string &str) const;
 };
 
 #endif
