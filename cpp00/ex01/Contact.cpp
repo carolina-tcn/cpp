@@ -36,7 +36,7 @@ void Contact::setContact()
 	getInput("Enter Last Name: ", last_name);
 	getInput("Enter Nickame: ", nickname);
 	getInput("Enter Phone number: ", phone_number);
-	getInput("Enter First Name: ", darkest_secret);
+	getInput("Enter Darkest secret: ", darkest_secret);
 }
 
 /*void Contact::displayContact()

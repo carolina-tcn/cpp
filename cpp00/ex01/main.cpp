@@ -14,7 +14,7 @@ void toupper_string(std::string& command)
 }
 int main()
 {
-	PhoneBook phonebook; //creo la instancia.
+	PhoneBook phonebook;
 	std::string command;
 	
 	while (true)
