@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 
+
 class Contact
 {
 	private:
@@ -17,11 +18,13 @@ class Contact
 		Contact();
 		void setContact();
 		void getInput(const std::string &prompt, std::string &input);
-		//void displayContact() const;
+
 
 		std::string getFirst_name() const;
 		std::string getLast_name() const;
 		std::string getNickname() const;
+		std::string getPhone_number() const;
+		std::string getDarkest_secret() const;
 };
 
 #endif

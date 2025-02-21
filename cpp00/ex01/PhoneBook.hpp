@@ -6,6 +6,7 @@
 
 #define MAX_CONTACTS 8
 
+
 class PhoneBook
 {	
 	private:
@@ -19,6 +20,7 @@ class PhoneBook
 		void addContact();
 		void searchContact();
 		void displaySavedContacts() const;
+		void displayContact(const int &index) const;
 
 		std::string formatWidth(const std::string &str) const;
 };

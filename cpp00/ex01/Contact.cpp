@@ -1,5 +1,6 @@
 #include "Contact.hpp"
 
+
 Contact::Contact() : first_name(""), last_name(""), nickname(""), phone_number(""), darkest_secret("") {}
 
 std::string Contact::getFirst_name() const
@@ -17,13 +18,27 @@ std::string Contact::getNickname() const
 	return (nickname);
 }
 
+std::string Contact::getPhone_number() const
+{
+	return (phone_number);
+}
+
+std::string Contact::getDarkest_secret() const
+{
+	return (darkest_secret);
+}
+
 void Contact::getInput(const std::string &prompt, std::string &input)
 {
 	while(true)
 	{
 		std::cout << prompt;
-		std::getline(std::cin, input);
-		if (input.empty())
+		if (!std::getline(std::cin, input))
+		{
+				std::cout << "\n❌ EOF detected 👋🏽👋🏽👋🏽..." << std::endl;
+				exit(EXIT_SUCCESS);
+		}
+		else if (input.empty())
 			std::cout << "❌ A saved contact can’t have empty fields.\n";
 		else
 			break;
@@ -32,21 +47,14 @@ void Contact::getInput(const std::string &prompt, std::string &input)
 
 void Contact::setContact()
 {
-	getInput("\nEnter First Name: ", first_name);
+	getInput("Enter First Name: ", first_name);
 	getInput("Enter Last Name: ", last_name);
 	getInput("Enter Nickame: ", nickname);
 	getInput("Enter Phone number: ", phone_number);
 	getInput("Enter Darkest secret: ", darkest_secret);
 }
 
-/*void Contact::displayContact()
-{
-	std::cout << "First Name: " << first_name << std::endl;
-	std::cout << "Last Name: " << last_name << std::endl;
-	std::cout << "Nickname: " << nickname << std::endl;
-	std::cout << "Phone number: " << phone_number << std::endl;
-	std::cout << "Darkest secret: " << darkest_secret << std::endl;
-}*/
+
 
 
 

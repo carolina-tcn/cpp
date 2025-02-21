@@ -1,5 +1,6 @@
 #include "PhoneBook.hpp"
 
+
 PhoneBook::PhoneBook() : contact_idx(0), contact_count(0) {}
 
 std::string PhoneBook::formatWidth(const std::string &str) const
@@ -34,13 +35,49 @@ void PhoneBook::displaySavedContacts() const
 	}
 }
 
+void PhoneBook::displayContact(const int &index) const
+{
+	std::cout << "First Name: " << contacts[index].getFirst_name() << std::endl;
+	std::cout << "Last Name: " << contacts[index].getLast_name() << std::endl;
+	std::cout << "Nickname: " << contacts[index].getNickname() << std::endl;
+	std::cout << "Phone number: " << contacts[index].getPhone_number() << std::endl;
+	std::cout << "Darkest secret: " << contacts[index].getDarkest_secret() << std::endl;
+}
+
 void PhoneBook::searchContact()
 {
-	if (contact_count == 0)
+	std::string idx;
+	int index;
+
+	if (!contact_count)
 	{
-		std::cout << "\n❗️The PhoneBook is empty." << std::endl;
-		return ;
+		std::cout << "❗️The PhoneBook is empty." << std::endl;
+		return;
 	}
 	PhoneBook::displaySavedContacts();
+	while (true)
+	{
+		std::cout << "Enter an index to display a contact: ";
+		if (!std::getline(std::cin, idx))
+		{
+				std::cout << "\n❌ EOF detected 👋🏽👋🏽👋🏽..." << std::endl;
+				exit(EXIT_SUCCESS);
+		}
+		else if (idx.length() == 1 && idx[0] >= '1' && idx[0] <= '8')
+		{
+			index = std::stoi(idx) - 1;
+
+			if (index >= contact_count)
+			{
+				std::cout << "❌ No contact exists in that position.\n";
+        		continue;
+			}
+			PhoneBook::displayContact(index);
+			break;
+		}
+		else
+			std::cout << "❗️Please, enter a valid index.\n";
+	}
+
 }
 

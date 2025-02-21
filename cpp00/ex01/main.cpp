@@ -20,8 +20,16 @@ int main()
 	while (true)
 	{
 		std::cout << "\n\t\t*🔎 Welcome to my PhoneBook 📞*\n" << std::endl
-			 << "Enter a command --> ADD, SEARCH or EXIT: ";
-		std::getline(std::cin, command);	
+			 << "Enter a command --> ADD, SEARCH or EXIT: " << std::endl;
+		if (!std::getline(std::cin, command))
+		{
+			if(std::cin.eof())
+			{
+				std::cout << "❌ EOF detected 👋🏽👋🏽👋🏽..." << std::endl;
+				break;
+			}
+			break;
+		}
 		toupper_string(command);
 	
 		if (command == "EXIT")
