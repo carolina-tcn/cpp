@@ -4,7 +4,11 @@
 
 int main()
 {
-	Zombie zombie;
+	Zombie *zombie_ptr = newZombie("Zombie_heap");
+	zombie_ptr->announce();
 
+	randomChump("Zombie_stack");
+
+	delete zombie_ptr;
 	return (0);
 }

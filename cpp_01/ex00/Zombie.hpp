@@ -10,14 +10,14 @@ class Zombie
 		std::string name;		
 			
 	public:
-		Zombie();
+		Zombie(std::string name);
 		~Zombie();
-		//The destructor must
-		//print a message with the name of the zombie for debugging purposes.
+
 		void announce();
-		
-		Zombie* newZombie(std::string name);
-		void randomChump(std::string name);
 };
+
+
+Zombie* newZombie(std::string name);
+void randomChump(std::string name);
 
 #endif
