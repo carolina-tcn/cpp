@@ -14,7 +14,7 @@ NAME = BraiiiiiiinnnzzzZ
 
 SRC = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 
-CC = g++
+CC = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
