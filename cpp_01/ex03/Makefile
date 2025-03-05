@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = UnnecessaryViolence
+NAME = unnecessaryViolence
 
 SRC = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 
