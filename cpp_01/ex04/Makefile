@@ -18,13 +18,13 @@ CC = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
-HEAD = 
+# HEAD = 
 
 OBJ = $(SRC:.cpp=.o)
 
 RM = rm -f
 
-%.o: %.cpp Makefile $(HEAD)
+%.o: %.cpp Makefile # $(HEAD)
 	$(CC) $(FLAGS) -c $< -o $@
 
 all: $(NAME)

@@ -12,34 +12,49 @@
 }*/
 
 
-std::string* readFile(std::string file)
+std::string readFile(const std::string file)
 {
+	std::string content;
+	std::string line;
+	
 	std::ifstream inFile(file); //open?
-	if (!) //no se abre
-		//exit
-
-	while (getline(MyReadFile, txt_file))
+	if (!inFile.is_open())
 	{
-		std::cout << txt_file;
-		std::cout << "\n";
+		std::cerr << "Error: Could not open file." << file << std::endl;
+		return ("");
 	}
-	std::cout << "el arg1 contiene: " << txt_file << std::endl;
-	MyReadFile.close();
+	while (std::getline(inFile, line))
+	{
+		content += line;
+		if (inFile.peek() != EOF)// Añadir salto de línea solo si no es el final del archivo
+            content += '\n';
+	}
+	inFile.close();
+	return (content);
 }
 
-
-//string:: length, substr, find, append, copy
 int main(int argc, char **argv)
 {
-	if (argc != 4)
-		return (std::cerr << "The program takes three parameters: <filename> <string1> <string2>." << std::endl);
-		
-	if (!(*argv[1] && *argv[2] && *argv[3]))
-		return (std::cerr << "The program needs three valid parameters." << std::endl);
+	std::string fileContent;
 
-	fileContent = readFile(*argv[1]);
-	if (!fileContent)
-		return (std::cerr << "The file is empty" << std::endl);
-	
+	if (argc != 4)
+	{
+		std::cerr << "Error: The program takes three parameters: <filename> <string1> <string2>." << std::endl;
+		return (EXIT_FAILURE);
+	}	
+	if (argv[1][0] == '\0' || argv[2][0] == '\0' || argv[3][0] == '\0')
+	{
+		std::cerr << "Error: The program needs three valid parameters." << std::endl;
+		return (EXIT_FAILURE);
+	}
+	fileContent = readFile(argv[1]);
+	if (fileContent.empty())
+	{
+		std::cerr << "Error: The file is empty or could not be read." << std::endl;
+		return (EXIT_FAILURE);
+	}
+	std::cout << fileContent << std::endl;
+	//Replace s1 with s2
 	return (EXIT_SUCCESS);
 }
+
