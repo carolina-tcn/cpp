@@ -4,28 +4,31 @@
 #include <cstdlib>
 
 
-std::string replaceStrings(std::string fileContent, std::string s1, std::string s2)
+void replaceStrings(std::string& result, const std::string& fileContent, const std::string s1, std::string s2)
 {
-	std::string result;
 	size_t idx = 0;
 	size_t foundIdx;
+	result.clear();
 
 	while (idx < fileContent.length())
 	{
 		foundIdx = fileContent.find(s1, idx);
-
-		if (foundIdx == std::string::npos || foundIdx != idx)
+		if (foundIdx == std::string::npos)
+		{
+			result += fileContent.substr(idx);
+			break;
+		}
+		else if (foundIdx == idx)
+		{
+			result += s2;
+			idx += s1.length();
+		}
+		else
 		{
 			result += fileContent[idx];
 			idx++;
 		}
-		else
-		{
-			result += s2;;
-			idx += s1.length();
-		}
 	}
-	return (result);
 }
 
 
@@ -37,7 +40,7 @@ std::string readFile(const std::string file)
 	std::ifstream inFile(file); //open?
 	if (!inFile.is_open())
 	{
-		std::cerr << "Error: Could not open file." << file << std::endl;
+		std::cerr << "Error: Could not open file: " << file << std::endl;
 		return ("");
 	}
 	while (std::getline(inFile, line))
@@ -53,8 +56,6 @@ std::string readFile(const std::string file)
 int main(int argc, char **argv)
 {
 	std::string fileContent;
-	std::string s1;
-	std::string s2;
 	std::string result;
 
 	if (argc != 4)
@@ -73,10 +74,7 @@ int main(int argc, char **argv)
 		std::cerr << "Error: The file is empty or could not be read." << std::endl;
 		return (EXIT_FAILURE);
 	}
-	std::cout << "file content: " << fileContent << std::endl;
-	s1 = argv[2];
-	s2 = argv[3];
-	result = replaceStrings(fileContent, s1, s2);
+	replaceStrings(result, fileContent, argv[2], argv[3]);
+	std::cout << result << std::endl;
 	return (EXIT_SUCCESS);
 }
-
