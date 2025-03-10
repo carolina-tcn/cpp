@@ -3,13 +3,30 @@
 #include <fstream>
 #include <cstdlib>
 
-/*REPLACE_STRINGS_FUNCTION
+
+std::string replaceStrings(std::string fileContent, std::string s1, std::string s2)
 {
-	std::string s1
-	std::string s2
-	s1 = argv[2];
-	s1 = argv[3];
-}*/
+	std::string result;
+	size_t idx = 0;
+	size_t foundIdx;
+
+	while (idx < fileContent.length())
+	{
+		foundIdx = fileContent.find(s1, idx);
+
+		if (foundIdx == std::string::npos || foundIdx != idx)
+		{
+			result += fileContent[idx];
+			idx++;
+		}
+		else
+		{
+			result += s2;;
+			idx += s1.length();
+		}
+	}
+	return (result);
+}
 
 
 std::string readFile(const std::string file)
@@ -36,6 +53,9 @@ std::string readFile(const std::string file)
 int main(int argc, char **argv)
 {
 	std::string fileContent;
+	std::string s1;
+	std::string s2;
+	std::string result;
 
 	if (argc != 4)
 	{
@@ -53,8 +73,10 @@ int main(int argc, char **argv)
 		std::cerr << "Error: The file is empty or could not be read." << std::endl;
 		return (EXIT_FAILURE);
 	}
-	std::cout << fileContent << std::endl;
-	//Replace s1 with s2
+	std::cout << "file content: " << fileContent << std::endl;
+	s1 = argv[2];
+	s2 = argv[3];
+	result = replaceStrings(fileContent, s1, s2);
 	return (EXIT_SUCCESS);
 }
 
