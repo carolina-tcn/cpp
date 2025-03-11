@@ -18,7 +18,7 @@ CC = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
-HEAD = Weapon.hpp HumanA.cpp HumanB.cpp
+HEAD = Weapon.hpp HumanA.hpp HumanB.hpp
 
 OBJ = $(SRC:.cpp=.o)
 
