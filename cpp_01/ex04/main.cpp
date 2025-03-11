@@ -31,7 +31,6 @@ void replaceStrings(std::string& result, const std::string& fileContent, const s
 	}
 }
 
-
 std::string readFile(std::ifstream& inFile)
 {
 	std::string content;
@@ -44,6 +43,26 @@ std::string readFile(std::ifstream& inFile)
             content += '\n';
 	}
 	return (content);
+}
+
+void createOutputFile(std::string& filename, std::string& result)
+{
+	std::string outputFilename;
+	outputFilename = filename + ".replace";
+	std::ofstream outFile(outputFilename);
+
+	if (!outFile.is_open())
+	{
+		std::cerr << "Error: Could not create output file: " << std::endl;
+		return (EXIT_FAILURE)
+	}
+	outFile << result;
+	if (outFile.fail())
+	{
+		std::cerr << "Error: Failed to write to output file: " << outputFilename << std::endl;
+		return (EXIT_FAILURE);
+	}
+	outFile.close();
 }
 
 int main(int argc, char **argv)
@@ -78,6 +97,7 @@ int main(int argc, char **argv)
 		return (EXIT_FAILURE);
 	}
 	replaceStrings(result, fileContent, argv[2], argv[3]);
-	//std::cout << result << std::endl;
+	if (!createOutputFile(argv[1], result))
+		return (EXIT_FAILURE);
 	return (EXIT_SUCCESS);
 }
