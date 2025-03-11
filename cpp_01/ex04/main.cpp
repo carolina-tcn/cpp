@@ -3,8 +3,21 @@
 #include <fstream>
 #include <cstdlib>
 
+# define WRONG_NUMBER_PARAM "Error: The program takes three parameters: <filename> <string1> <string2>"
+# define VALID_PARAM "Error: The program needs three valid parameters"
+# define NOT_OPEN "Error: Could not open file: "
+# define EMPTY_FILE "Error: The file is empty or could not be read."
+# define ERR_CREATE_FILE "Error: Could not create output file: "
+# define ERR_WRITE_FILE "Error: Failed to write to output file: "
 
-void replaceStrings(std::string& result, const std::string& fileContent, const std::string s1, std::string s2)
+
+void printErrorExit(const char* message, const std::string& arg = "")
+{
+	std::cerr << message << arg << std::endl;
+	exit(EXIT_FAILURE);
+}
+
+void replaceStrings(std::string& result, const std::string& fileContent, const std::string& s1, const std::string& s2)
 {
 	size_t idx = 0;
 	size_t foundIdx;
@@ -35,33 +48,35 @@ std::string readFile(std::ifstream& inFile)
 {
 	std::string content;
 	std::string line;
-	
-	while (std::getline(inFile, line))
-	{
-		content += line;
-		if (inFile.peek() != EOF)
+	bool lastNewline = false;
+
+    while (std::getline(inFile, line))
+    {
+        content += line;
+        lastNewline = (inFile.peek() != EOF);
+        if (lastNewline)
             content += '\n';
-	}
+    }
+
+    if (!lastNewline && !content.empty() && inFile.eof())
+        content += '\n';
+
 	return (content);
 }
 
-void createOutputFile(std::string& filename, std::string& result)
+void createOutFile(std::string& filename, std::string& result)
 {
 	std::string outputFilename;
 	outputFilename = filename + ".replace";
 	std::ofstream outFile(outputFilename);
 
 	if (!outFile.is_open())
-	{
-		std::cerr << "Error: Could not create output file: " << std::endl;
-		return (EXIT_FAILURE)
-	}
+		printErrorExit(ERR_CREATE_FILE);
+
 	outFile << result;
 	if (outFile.fail())
-	{
-		std::cerr << "Error: Failed to write to output file: " << outputFilename << std::endl;
-		return (EXIT_FAILURE);
-	}
+		printErrorExit(ERR_WRITE_FILE);
+
 	outFile.close();
 }
 
@@ -71,33 +86,25 @@ int main(int argc, char **argv)
 	std::string result;
 
 	if (argc != 4)
-	{
-		std::cerr << "Error: The program takes three parameters: <filename> <string1> <string2>." << std::endl;
-		return (EXIT_FAILURE);
-	}	
+		printErrorExit(WRONG_NUMBER_PARAM);
+
 	if (argv[1][0] == '\0' || argv[2][0] == '\0' || argv[3][0] == '\0')
-	{
-		std::cerr << "Error: The program needs three valid parameters." << std::endl;
-		return (EXIT_FAILURE);
-	}
-	
+		printErrorExit(VALID_PARAM);
+
 	std::ifstream inFile(argv[1]);
 	if (!inFile.is_open())
-	{
-		std::cerr << "Error: Could not open file: " << argv[1] << std::endl;
-		return (EXIT_FAILURE);
-	}
+		printErrorExit(NOT_OPEN, argv[1]);
 
 	fileContent = readFile(inFile);
 	inFile.close();
 	
 	if (fileContent.empty())
-	{
-		std::cerr << "Error: The file is empty or could not be read." << std::endl;
-		return (EXIT_FAILURE);
-	}
+		printErrorExit(EMPTY_FILE);
+
 	replaceStrings(result, fileContent, argv[2], argv[3]);
-	if (!createOutputFile(argv[1], result))
-		return (EXIT_FAILURE);
+	
+	std::string filename(argv[1]);
+	createOutFile(filename, result);
+
 	return (EXIT_SUCCESS);
 }
