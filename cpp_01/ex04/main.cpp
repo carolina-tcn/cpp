@@ -32,24 +32,17 @@ void replaceStrings(std::string& result, const std::string& fileContent, const s
 }
 
 
-std::string readFile(const std::string file)
+std::string readFile(std::ifstream& inFile)
 {
 	std::string content;
 	std::string line;
 	
-	std::ifstream inFile(file); //open?
-	if (!inFile.is_open())
-	{
-		std::cerr << "Error: Could not open file: " << file << std::endl;
-		return ("");
-	}
 	while (std::getline(inFile, line))
 	{
 		content += line;
-		if (inFile.peek() != EOF)// Añadir salto de línea solo si no es el final del archivo
+		if (inFile.peek() != EOF)
             content += '\n';
 	}
-	inFile.close();
 	return (content);
 }
 
@@ -68,13 +61,23 @@ int main(int argc, char **argv)
 		std::cerr << "Error: The program needs three valid parameters." << std::endl;
 		return (EXIT_FAILURE);
 	}
-	fileContent = readFile(argv[1]);
+	
+	std::ifstream inFile(argv[1]);
+	if (!inFile.is_open())
+	{
+		std::cerr << "Error: Could not open file: " << argv[1] << std::endl;
+		return (EXIT_FAILURE);
+	}
+
+	fileContent = readFile(inFile);
+	inFile.close();
+	
 	if (fileContent.empty())
 	{
 		std::cerr << "Error: The file is empty or could not be read." << std::endl;
 		return (EXIT_FAILURE);
 	}
 	replaceStrings(result, fileContent, argv[2], argv[3]);
-	std::cout << result << std::endl;
+	//std::cout << result << std::endl;
 	return (EXIT_SUCCESS);
 }
