@@ -36,10 +36,7 @@ void	Harl::complain(std::string level)
 	for (int i = 0; i < 4; i++)
 	{
 		if (levels[i] == level)
-		{
 			(this->*functions[i])();
-			return;
-		}
 	}
 	std::cout << "[ UNKNOWN ]\nHarl is confused and says nothing..." << std::endl;
 
