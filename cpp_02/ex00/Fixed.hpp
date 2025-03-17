@@ -9,8 +9,8 @@ class Fixed
 
 	public:
 		Fixed();
-		Fixed(Fixed &fixed); //copy constructor
-		//copy assignment operator overload
+		Fixed(const Fixed &fixed); //copy constructor
+		Fixed &operator = (const Fixed &fixed);//copy assignment operator overload
 
 		int getRawBits() const;
 		void setRawBits(int const raw);
