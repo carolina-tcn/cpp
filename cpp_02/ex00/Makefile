@@ -10,13 +10,13 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = myFirstOcf
+NAME = a.out
 
 SRC = main.cpp Fixed.cpp
 
 CC = c++
 
-FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
+FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic # -fsanitize=address
 
 HEAD = Fixed.hpp
 
