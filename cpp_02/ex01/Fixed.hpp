@@ -31,6 +31,7 @@ class Fixed
 		int toInt() const;
 };
 
+//Overload of the insertion << operator
 std::ostream& operator<<(std::ostream &out, const Fixed& fixed);
 
 # endif
