@@ -1,6 +1,9 @@
 #ifndef FIXED_HPP
 # define FIXED_HPP
 
+#include <iostream>
+
+
 class Fixed
 {
 	private:
@@ -11,11 +14,10 @@ class Fixed
 		Fixed();
 		Fixed(const Fixed &fixed); //copy constructor
 		Fixed &operator = (const Fixed &fixed);//copy assignment operator overload
+		~Fixed();
 
 		int getRawBits() const;
 		void setRawBits(int const raw);
-		
-		~Fixed();
 };
 
 # endif
