@@ -35,10 +35,24 @@ Fixed& Fixed::operator = (const Fixed &fixed)
 		this->fixed_point_value = fixed.getRawBits();
 	return (*this);
 }
-Fixed Fixed::operator+(const Fixed &fixed) const;
-Fixed Fixed::operator-(const Fixed &fixed) const;
-Fixed Fixed::operator*(const Fixed &fixed) const;
-Fixed Fixed::operator/(const Fixed &fixed) const;
+
+Fixed Fixed::operator+(const Fixed &fixed) const
+{
+	return (Fixed(this->toFloat() + fixed.toFloat()));
+}
+
+Fixed Fixed::operator-(const Fixed &fixed) const
+{
+	return (Fixed(this->toFloat() - fixed.toFloat()));
+}
+Fixed Fixed::operator*(const Fixed &fixed) const
+{
+	return (Fixed(this->toFloat() * fixed.toFloat()));
+}
+Fixed Fixed::operator/(const Fixed &fixed) const
+{
+	return (Fixed(this->toFloat() / fixed.toFloat()));
+}
 
 Fixed &Fixed::operator++();
 Fixed Fixed::operator++(int);
@@ -47,32 +61,32 @@ Fixed Fixed::operator--(int);
 		
 bool Fixed::operator>(const Fixed &fixed) const
 {
-	return (fixed_point_value > fixed.fixed_point_value);
+	return (this->fixed_point_value > fixed.fixed_point_value);
 }
 
 bool Fixed::operator<(const Fixed &fixed) const
 {
-	return (fixed_point_value < fixed.fixed_point_value);
+	return (this->fixed_point_value < fixed.fixed_point_value);
 }
 
 bool Fixed::operator>=(const Fixed &fixed) const
 {
-	return (fixed_point_value >= fixed.fixed_point_value);
+	return (this->fixed_point_value >= fixed.fixed_point_value);
 }
 
 bool Fixed::operator<=(const Fixed &fixed) const
 {
-	return (fixed_point_value <= fixed.fixed_point_value);
+	return (this->fixed_point_value <= fixed.fixed_point_value);
 }
 
 bool Fixed::operator==(const Fixed &fixed) const
 {
-	return (fixed_point_value == fixed.fixed_point_value);
+	return (this->fixed_point_value == fixed.fixed_point_value);
 }
 
 bool Fixed::operator!=(const Fixed &fixed) const
 {
-	return (fixed_point_value != fixed.fixed_point_value);
+	return (this->fixed_point_value != fixed.fixed_point_value);
 }
 
 
