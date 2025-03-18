@@ -45,12 +45,35 @@ Fixed Fixed::operator++(int);
 Fixed &Fixed::operator--();
 Fixed Fixed::operator--(int);
 		
-bool Fixed::operator>(const Fixed &fixed) const;
-bool Fixed::operator<(const Fixed &fixed) const;
-bool Fixed::operator>=(const Fixed &fixed) const;
-bool Fixed::operator<=(const Fixed &fixed) const;
-bool Fixed::operator==(const Fixed &fixed) const;
-bool Fixed::operator!=(const Fixed &fixed) const;
+bool Fixed::operator>(const Fixed &fixed) const
+{
+	return (fixed_point_value > fixed.fixed_point_value);
+}
+
+bool Fixed::operator<(const Fixed &fixed) const
+{
+	return (fixed_point_value < fixed.fixed_point_value);
+}
+
+bool Fixed::operator>=(const Fixed &fixed) const
+{
+	return (fixed_point_value >= fixed.fixed_point_value);
+}
+
+bool Fixed::operator<=(const Fixed &fixed) const
+{
+	return (fixed_point_value <= fixed.fixed_point_value);
+}
+
+bool Fixed::operator==(const Fixed &fixed) const
+{
+	return (fixed_point_value == fixed.fixed_point_value);
+}
+
+bool Fixed::operator!=(const Fixed &fixed) const
+{
+	return (fixed_point_value != fixed.fixed_point_value);
+}
 
 
 //Destructor
