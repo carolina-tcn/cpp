@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ctacconi <ctacconi@student.42barcelon      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/27 11:12:15 by ctacconi          #+#    #+#             */
+/*   Updated: 2025/02/27 11:21:41 by ctacconi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 
 #include <string>
 #include <iostream>
-
+#include <cstdlib>
 
 class Contact
 {
@@ -18,7 +30,6 @@ class Contact
 		Contact();
 		void setContact();
 		void getInput(const std::string &prompt, std::string &input);
-
 
 		std::string getFirst_name() const;
 		std::string getLast_name() const;

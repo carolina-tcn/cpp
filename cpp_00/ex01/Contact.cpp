@@ -1,7 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ctacconi <ctacconi@student.42barcelon      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/27 11:11:27 by ctacconi          #+#    #+#             */
+/*   Updated: 2025/02/27 11:12:03 by ctacconi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Contact.hpp"
 
 
 Contact::Contact() : first_name(""), last_name(""), nickname(""), phone_number(""), darkest_secret("") {}
+
 
 std::string Contact::getFirst_name() const
 {
@@ -28,6 +41,7 @@ std::string Contact::getDarkest_secret() const
 	return (darkest_secret);
 }
 
+
 void Contact::getInput(const std::string &prompt, std::string &input)
 {
 	while(true)
@@ -35,7 +49,7 @@ void Contact::getInput(const std::string &prompt, std::string &input)
 		std::cout << prompt;
 		if (!std::getline(std::cin, input))
 		{
-				std::cout << "\n❌ EOF detected 👋🏽👋🏽👋🏽..." << std::endl;
+				std::cout << "\n❌ EOF detected 👋👋👋..." << std::endl;
 				exit(EXIT_SUCCESS);
 		}
 		else if (input.empty())
@@ -53,8 +67,4 @@ void Contact::setContact()
 	getInput("Enter Phone number: ", phone_number);
 	getInput("Enter Darkest secret: ", darkest_secret);
 }
-
-
-
-
 

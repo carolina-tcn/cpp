@@ -1,11 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ctacconi <ctacconi@student.42barcelon      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/27 11:14:38 by ctacconi          #+#    #+#             */
+/*   Updated: 2025/02/27 11:18:22 by ctacconi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
-#include <iomanip>
-#include "Contact.hpp"
+# include <iomanip>
+# include <cstdlib>
+# include "Contact.hpp"
 
-#define MAX_CONTACTS 8
-
+# define MAX_CONTACTS 8
+# define EXIT_SUCCESS 0
 
 class PhoneBook
 {	

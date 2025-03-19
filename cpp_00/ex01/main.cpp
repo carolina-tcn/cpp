@@ -1,10 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ctacconi <ctacconi@student.42barcelon      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/27 11:12:33 by ctacconi          #+#    #+#             */
+/*   Updated: 2025/02/27 11:13:38 by ctacconi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include <string>
 #include "PhoneBook.hpp"
-//#include "Contact.hpp"
-
-
-//ctrl+v + ctr+m y ctr+d
 
 void toupper_string(std::string& command)
 {
@@ -12,6 +20,7 @@ void toupper_string(std::string& command)
 		command[i] = std::toupper(command[i]);
 
 }
+
 int main()
 {
 	PhoneBook phonebook;
@@ -25,11 +34,12 @@ int main()
 		{
 			if(std::cin.eof())
 			{
-				std::cout << "❌ EOF detected 👋🏽👋🏽👋🏽..." << std::endl;
+				std::cout << "❌ EOF detected 👋👋👋..." << std::endl;
 				break;
 			}
 			break;
 		}
+
 		toupper_string(command);
 	
 		if (command == "EXIT")
@@ -43,3 +53,4 @@ int main()
 	}
 	return (0);
 }
+

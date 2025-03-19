@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ctacconi <ctacconi@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/13 18:12:48 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/02/13 19:42:06 by ctacconi         ###   ########.fr       */
+/*   Created: 2025/02/27 10:34:29 by ctacconi          #+#    #+#             */
+/*   Updated: 2025/02/27 11:10:47 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int main(int argc, char **argv)
 {
-	if (argc > 1)
+	if (argc > 1 && argv[1][0] != '\0')
 	{
 		for (int i = 1; i < argc; ++i)
 		{

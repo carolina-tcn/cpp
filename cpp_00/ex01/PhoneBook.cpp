@@ -1,7 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ctacconi <ctacconi@student.42barcelon      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/27 11:14:06 by ctacconi          #+#    #+#             */
+/*   Updated: 2025/02/27 11:21:10 by ctacconi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include "PhoneBook.hpp"
 
 
 PhoneBook::PhoneBook() : contact_idx(0), contact_count(0) {}
+
 
 std::string PhoneBook::formatWidth(const std::string &str) const
 {
@@ -60,12 +74,12 @@ void PhoneBook::searchContact()
 		std::cout << "Enter an index to display a contact: ";
 		if (!std::getline(std::cin, idx))
 		{
-				std::cout << "\n❌ EOF detected 👋🏽👋🏽👋🏽..." << std::endl;
+				std::cout << "\n❌ EOF detected 👋👋👋..." << std::endl;
 				exit(EXIT_SUCCESS);
 		}
 		else if (idx.length() == 1 && idx[0] >= '1' && idx[0] <= '8')
 		{
-			index = std::stoi(idx) - 1;
+			index = idx[0] - '1';
 
 			if (index >= contact_count)
 			{
