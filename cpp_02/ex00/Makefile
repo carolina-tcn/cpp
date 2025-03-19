@@ -6,7 +6,7 @@
 #    By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/12 17:54:50 by ctacconi          #+#    #+#              #
-#    Updated: 2025/03/19 16:34:45 by ctacconi         ###   ########.fr        #
+#    Updated: 2025/03/19 16:43:39 by ctacconi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRC = main.cpp Fixed.cpp
 
 CC = c++
 
-FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic -fsanitize=address
+FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
 HEAD = Fixed.hpp
 
