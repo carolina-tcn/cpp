@@ -1,8 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Harl.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/19 13:32:58 by ctacconi          #+#    #+#             */
+/*   Updated: 2025/03/19 14:36:49 by ctacconi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Harl.hpp"
 
 
 Harl::Harl(){}
-
 
 void	Harl::debug()
 {
@@ -38,6 +49,4 @@ void	Harl::complain(std::string level)
 		if (levels[i] == level)
 			(this->*functions[i])();
 	}
-	std::cout << "[ UNKNOWN ]\nHarl is confused and says nothing..." << std::endl;
-
 }

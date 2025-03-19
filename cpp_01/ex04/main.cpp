@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/19 13:32:48 by ctacconi          #+#    #+#             */
+/*   Updated: 2025/03/19 14:23:21 by ctacconi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <string>
 #include <iostream>
 #include <fstream>
@@ -57,10 +69,10 @@ std::string readFile(std::ifstream& inFile)
         if (lastNewline)
             content += '\n';
     }
-
     if (!lastNewline && !content.empty() && inFile.eof())
-        content += '\n';
-
+    {
+		content += '\n';
+	}
 	return (content);
 }
 
@@ -68,10 +80,10 @@ void createOutFile(std::string& filename, std::string& result)
 {
 	std::string outputFilename;
 	outputFilename = filename + ".replace";
-	std::ofstream outFile(outputFilename);
+	std::ofstream outFile(outputFilename.c_str());
 
 	if (!outFile.is_open())
-		printErrorExit(ERR_CREATE_FILE);
+		printErrorExit(ERR_CREATE_FILE, outputFilename);
 
 	outFile << result;
 	if (outFile.fail())
