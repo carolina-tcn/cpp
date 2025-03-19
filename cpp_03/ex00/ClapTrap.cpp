@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 16:56:07 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/03/19 19:12:40 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/03/19 19:24:49 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
-ClapTrap::ClapTrap() : name(""), hit_points(0), energy_points(0), attack_damage(0)
+ClapTrap::ClapTrap() : name(""), hit_points(10), energy_points(10), attack_damage(10)
 {
 	std::cout << "Default constructor called" << std::endl;
 }
@@ -22,6 +22,7 @@ ClapTrap::ClapTrap() : name(""), hit_points(0), energy_points(0), attack_damage(
 
 ClapTrap::ClapTrap(std::string name)
 {
+	std::cout << name << " constructor called" << std::endl;
 	this->name = name;
 }
 
@@ -33,8 +34,13 @@ ClapTrap::ClapTrap(const ClapTrap &other)
 
 /*ClapTrap& ClapTrap::operator=(const ClapTrap &other)
 {
+	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &other) 
-		//this-> = other.
+	{
+		this->hit_points = other.getHitPoints();
+		this->energy_points = other.getEnergyPoints();
+		this->attack_damage = other.getAttackPoints();
+	}
 	return (*this);
 }*/
 
@@ -70,3 +76,18 @@ void ClapTrap::beRepaired(unsigned int amount)
 	
 }
 
+//Getters y setters
+int ClapTrap::getHitPoints() const
+{
+	return  (hit_points);	
+}
+
+int ClapTrap::getEnergyPoints() const
+{
+	return (energy_points);
+}
+
+int ClapTrap::getAttackPoints() const
+{
+	return (attack_damage);
+}

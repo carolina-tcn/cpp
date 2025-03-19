@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 16:55:49 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/03/19 19:12:49 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/03/19 19:26:32 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,13 @@ class ClapTrap
 		void beRepaired(unsigned int amount);
 		
 		//Getters y setters
+		int getHitPoints() const;
+		int getEnergyPoints() const;
+		int getAttackPoints() const;
+
+		void setHitPoints(int const points);
+		void setEnergyPoints(int const points);
+		void setAttackPoints(int const points);
 };
 
 #endif
