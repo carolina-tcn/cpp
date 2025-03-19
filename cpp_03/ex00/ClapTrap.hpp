@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 16:55:49 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/03/19 19:26:32 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/03/19 19:36:00 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ class ClapTrap
 
 		void setHitPoints(int const points);
 		void setEnergyPoints(int const points);
-		void setAttackPoints(int const points);
+		void setAttackDamage(int const points);
 };
 
 #endif

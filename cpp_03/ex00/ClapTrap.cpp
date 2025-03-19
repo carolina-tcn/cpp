@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 16:56:07 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/03/19 19:24:49 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/03/19 19:36:13 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,4 +90,19 @@ int ClapTrap::getEnergyPoints() const
 int ClapTrap::getAttackPoints() const
 {
 	return (attack_damage);
+}
+
+void ClapTrap::setHitPoints(int const points)
+{
+	this->hit_points = points;
+}
+
+void ClapTrap::setEnergyPoints(int const points)
+{
+	this->energy_points = points;
+}
+
+void ClapTrap::setAttackDamage(int const points)
+{
+	this->attack_damage = points;
 }
