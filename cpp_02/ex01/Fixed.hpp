@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 16:42:47 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/03/19 16:42:48 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/03/20 17:44:16 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,7 @@ class Fixed
 		Fixed(const float value);
 
 		//Assignment operator
-		Fixed &operator = (const Fixed &fixed);//copy assignment operator overload
-
-		//Destructor
+		Fixed &operator = (const Fixed &fixed);
 		~Fixed();
 
 		//Member functions
