@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 16:56:07 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/03/19 19:36:13 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/03/20 18:19:26 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,17 @@ ClapTrap::ClapTrap(const ClapTrap &other)
 	*this = other;
 }
 
-/*ClapTrap& ClapTrap::operator=(const ClapTrap &other)
+ClapTrap& ClapTrap::operator=(const ClapTrap &other)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &other) 
 	{
-		this->hit_points = other.getHitPoints();
-		this->energy_points = other.getEnergyPoints();
-		this->attack_damage = other.getAttackPoints();
+		this->hit_points = other.hit_points;
+		this->energy_points = other.energy_points;
+		this->attack_damage = other.attack_damage;
 	}
 	return (*this);
-}*/
+}
 
 ClapTrap::~ClapTrap()
 {
@@ -76,33 +76,33 @@ void ClapTrap::beRepaired(unsigned int amount)
 	
 }
 
-//Getters y setters
-int ClapTrap::getHitPoints() const
-{
-	return  (hit_points);	
-}
+//Getters y setters CONTROL K Y CONTROL C
+// int ClapTrap::getHitPoints() const
+// {
+// 	return  (hit_points);	
+// }
 
-int ClapTrap::getEnergyPoints() const
-{
-	return (energy_points);
-}
+// int ClapTrap::getEnergyPoints() const
+// {
+// 	return (energy_points);
+// }
 
-int ClapTrap::getAttackPoints() const
-{
-	return (attack_damage);
-}
+// int ClapTrap::getAttackPoints() const
+// {
+// 	return (attack_damage);
+// }
 
-void ClapTrap::setHitPoints(int const points)
-{
-	this->hit_points = points;
-}
+// void ClapTrap::setHitPoints(int const points)
+// {
+// 	this->hit_points = points;
+// }
 
-void ClapTrap::setEnergyPoints(int const points)
-{
-	this->energy_points = points;
-}
+// void ClapTrap::setEnergyPoints(int const points)
+// {
+// 	this->energy_points = points;
+// }
 
-void ClapTrap::setAttackDamage(int const points)
-{
-	this->attack_damage = points;
-}
+// void ClapTrap::setAttackDamage(int const points)
+// {
+// 	this->attack_damage = points;
+// }
