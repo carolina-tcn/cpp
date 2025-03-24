@@ -14,30 +14,33 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
-ClapTrap::ClapTrap() : _name(""), _hit_points(10), _energy_points(10), _attack_damage(10)
+ClapTrap::ClapTrap() : _name("Random"), _hit_points(10), _energy_points(10), _attack_damage(10)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Default ClapTrap constructor called, default name will be: " <<  _name << std::endl;
 }
 
 
 ClapTrap::ClapTrap(std::string name)
 {
-	std::cout << name << " constructor called" << std::endl;
-	this->_name = name;
+	_name = name;
 	_hit_points = 10;
 	_energy_points = 10;
 	_attack_damage = 10;
+	std::cout << "ClapTrap " << _name << " constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other)
 {
-	std::cout << "Copy constructor called" << std::endl;
-	*this = other;
+	_name = other._name;
+	_hit_points = other._hit_points;
+	_energy_points = other._energy_points;
+	_attack_damage = other._attack_damage;
+	std::cout << "ClapTrap " << _name << " copy constructor called" << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap &other)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "Copy assignment operator called for ClapTrap " << _name << std::endl;
 	if (this != &other) 
 	{
 		this->_hit_points = other._hit_points;
@@ -49,34 +52,52 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &other)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "ClapTrap " << _name << " destructor called" << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target)
 {
-	std::cout << "ClapTrap" << _name << "attacks" 
-	<< target << ", causing" << "damage" << "points of damage!" << std::endl;
-	//target lose attack_damage points
-	// -1 energy point
-	
-	//if (hit_points != 0 && energy_points != 0)
-	//	
+	if (_energy_points > 0 || _hit_points > 0)
+	{
+		std::cout << "ClapTrap" << _name << "attacks" 
+		<< target << ", causing" << _attack_damage << "points of damage!" << std::endl;
+		_energy_points--;
+	}
+	else
+	{
+		std::cout << "ClapTrap" << _name << "hasn't enought points to attack" << std::endl;
+	}
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	std::cout << "ClapTrap" << _name << "takes damage and lose" << amount  
-	<< "points of damage!" << std::endl;
-	//claptrap lose attack_damage points
+	if (_hit_points > 0)
+	{
+		std::cout << "ClapTrap" << _name << "takes damage and lose" << amount  
+		<< "points of damage!" << std::endl;
+		_hit_points -= amount;
+		if (_hit_points <= 0)
+			std::cout << "ClapTrap" << _name << "died" << std::endl;
+	}
+	else
+	{
+		std::cout << "ClapTrap" << _name << "is already dead" << std::endl;
+	}
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	std::cout << "ClapTrap" << _name << "repairs itself with" << amount 
-	<< "hit points back" << std::endl;
-	//claptrap gets amount back to hit_points
-	//-1 energy point
-	
+	if (_energy_points > 0 || _hit_points > 0)
+	{
+		std::cout << "ClapTrap" << _name << "repairs itself with" << amount 
+		<< "hit points back" << std::endl;
+		_hit_points += amount;
+		_energy_points--;
+	}
+	else
+	{
+		std::cout << "ClapTrap" << _name << "hasn't enought points to be repaired" << std::endl;
+	}
 }
 
 //Getters y setters CONTROL K Y CONTROL C, comand u

@@ -16,8 +16,13 @@
 
 int main()
 {
-    ClapTrap a("Carolina");
+    //ClapTrap a;
     ClapTrap b("Juan");
+    ClapTrap c("Luis");
+    //ClapTrap copy_a(a);
+    ClapTrap d = b;
+    c = b;
+
 
     //a.attack(b);
     //b.takeDamage(3);
