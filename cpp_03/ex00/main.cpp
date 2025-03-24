@@ -16,17 +16,21 @@
 
 int main()
 {
-    //ClapTrap a;
-    ClapTrap b("Juan");
-    ClapTrap c("Luis");
+    ClapTrap NinjaAssassin;
+    ClapTrap FragTrap("FragTrap");
+    ClapTrap ClackTrap("ClackTrap");
     //ClapTrap copy_a(a);
-    ClapTrap d = b;
-    c = b;
+    //ClapTrap d = b;
+    //c = b;
 
 
-    //a.attack(b);
-    //b.takeDamage(3);
-    //b.beRepaired(4);
+    NinjaAssassin.attack("FragTrap");
+    FragTrap.takeDamage(3);
+    FragTrap.beRepaired(4);
+    FragTrap.takeDamage(15);
+    ClackTrap.attack("NinjaAssassin");
+    ClackTrap.takeDamage(10);
+    ClackTrap.beRepaired(2);
 
     return (0);
 }
