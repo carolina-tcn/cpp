@@ -11,10 +11,12 @@
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include <iostream>
+
 
 int main()
 {
-    ClapTrap a("Pepe");
+    ClapTrap a("Carolina");
     ClapTrap b("Juan");
 
     //a.attack(b);

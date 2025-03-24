@@ -14,7 +14,7 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
-ClapTrap::ClapTrap() : name(""), hit_points(10), energy_points(10), attack_damage(10)
+ClapTrap::ClapTrap() : _name(""), _hit_points(10), _energy_points(10), _attack_damage(10)
 {
 	std::cout << "Default constructor called" << std::endl;
 }
@@ -23,7 +23,10 @@ ClapTrap::ClapTrap() : name(""), hit_points(10), energy_points(10), attack_damag
 ClapTrap::ClapTrap(std::string name)
 {
 	std::cout << name << " constructor called" << std::endl;
-	this->name = name;
+	this->_name = name;
+	_hit_points = 10;
+	_energy_points = 10;
+	_attack_damage = 10;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other)
@@ -37,9 +40,9 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &other)
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &other) 
 	{
-		this->hit_points = other.hit_points;
-		this->energy_points = other.energy_points;
-		this->attack_damage = other.attack_damage;
+		this->_hit_points = other._hit_points;
+		this->_energy_points = other._energy_points;
+		this->_attack_damage = other._attack_damage;
 	}
 	return (*this);
 }
@@ -51,7 +54,7 @@ ClapTrap::~ClapTrap()
 
 void ClapTrap::attack(const std::string& target)
 {
-	std::cout << "ClapTrap" << name << "attacks" 
+	std::cout << "ClapTrap" << _name << "attacks" 
 	<< target << ", causing" << "damage" << "points of damage!" << std::endl;
 	//target lose attack_damage points
 	// -1 energy point
@@ -62,24 +65,24 @@ void ClapTrap::attack(const std::string& target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	std::cout << "ClapTrap" << name << "takes damage and lose" << amount  
+	std::cout << "ClapTrap" << _name << "takes damage and lose" << amount  
 	<< "points of damage!" << std::endl;
 	//claptrap lose attack_damage points
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	std::cout << "ClapTrap" << name << "repairs itself with" << amount 
+	std::cout << "ClapTrap" << _name << "repairs itself with" << amount 
 	<< "hit points back" << std::endl;
 	//claptrap gets amount back to hit_points
 	//-1 energy point
 	
 }
 
-//Getters y setters CONTROL K Y CONTROL C
+//Getters y setters CONTROL K Y CONTROL C, comand u
 // int ClapTrap::getHitPoints() const
 // {
-// 	return  (hit_points);	
+//  	return  (hit_points);	
 // }
 
 // int ClapTrap::getEnergyPoints() const
