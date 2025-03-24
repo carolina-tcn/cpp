@@ -19,9 +19,9 @@ int main()
     ClapTrap NinjaAssassin;
     ClapTrap FragTrap("FragTrap");
     ClapTrap ClackTrap("ClackTrap");
-    //ClapTrap copy_a(a);
-    //ClapTrap d = b;
-    //c = b;
+    //ClapTrap copyNinjaAssassin(NinjaAssassin); //constructor de copia, como no exist se CREA desde cero. estoy declarando e inicializando
+    //ClapTrap copy_b = b;
+    //ClackTrap = FragTrap; //ClackTrap ya existe, le copio los valores de FragTrap operator=
 
 
     NinjaAssassin.attack("FragTrap");
