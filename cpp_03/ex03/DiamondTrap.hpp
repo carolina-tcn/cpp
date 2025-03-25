@@ -15,5 +15,5 @@ class DiamondTrap : public FragTrap, public ScavTrap
         ~DiamondTrap();
    
         void whoAmI();
-        ScavTrap::attack;
+        //ScavTrap::attack;
 };

@@ -2,8 +2,7 @@
 
 #include "ClapTrap.hpp"
 
-//HERENCIASSSSSSS == INHERITANCE
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
     public:
         ScavTrap();
