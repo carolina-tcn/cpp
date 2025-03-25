@@ -10,37 +10,31 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
+#include <iostream>
+
 
 int main()
 {
-    // ClapTrap NinjaAssassin;
-    // ClapTrap FragTrap("FragTrap");
-    // ClapTrap ClackTrap("ClackTrap");
-    // //ClapTrap copyNinjaAssassin(NinjaAssassin); //constructor de copia, como no exist se CREA desde cero. estoy declarando e inicializando
-    // //ClapTrap copy_b = b;
-    // //ClackTrap = FragTrap; //ClackTrap ya existe, le copio los valores de FragTrap operator=
+    std::cout << "\n🛠️  Creating FragTrap A...\n" << std::endl;
+    FragTrap A("Alpha");
 
+    std::cout << "\n🤝 Calling highFivesGuys() on A...\n" << std::endl;
+    A.highFivesGuys();
 
-    // NinjaAssassin.attack("FragTrap");
-    // FragTrap.takeDamage(3);
-    // FragTrap.beRepaired(4);
-    // FragTrap.takeDamage(15);
-    // ClackTrap.attack("NinjaAssassin");
-    // ClackTrap.takeDamage(10);
-    // ClackTrap.beRepaired(2);
+    std::cout << "\n🛠️  Creating FragTrap B using copy constructor from A...\n" << std::endl;
+    FragTrap B(A);
 
-    ScavTrap Scav;
-    //ScavTrap("NinjaAssassin"); //OBJETO TEMPORAL, no lo guardo en ninguna var
-    ScavTrap NinjaAssassin("NinjaAssassin");
-    // ScavTrap FragTrap("FragTrap");
-    // ScavTrap ClackTrap("ClackTrap");
-    //ScavTrap CopyScav(scav);
-    //Scav = NinjaAssassin;
-    ScavTrap Jeje(NinjaAssassin);
-    
-    Scav.guardGate();
-    Scav.attack("NinjaAssassin");
+    std::cout << "\n🎯 A attacks target 'BetaBot'\n" << std::endl;
+    A.attack("BetaBot");
+
+    std::cout << "\n🛠️  Creating FragTrap C with name 'Charlie'...\n" << std::endl;
+    FragTrap C("Charlie");
+
+    std::cout << "\n🔁 Assigning C = A using operator=...\n" << std::endl;
+    C = A;
+
+    std::cout << "\n💥 Exiting main, destructors will now be called...\n" << std::endl;
 
     return (0);
 }
