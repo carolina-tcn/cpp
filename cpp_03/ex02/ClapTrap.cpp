@@ -16,13 +16,13 @@
 
 ClapTrap::ClapTrap() : _name("Random"), _hit_points(10), _energy_points(10), _attack_damage(10)
 {
-	std::cout << "Default ClapTrap constructor called, default name will be: " <<  _name << std::endl;
+	std::cout << "Default \033[1;32mClapTrap\033[0m constructor called, default name will be: "  << GREEN << _name << RESET << std::endl;
 }
 
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hit_points(10), _energy_points(10), _attack_damage(10)
 {
-	std::cout << "ClapTrap " << _name << " constructor called" << std::endl;
+	std::cout << "\033[1;32mClapTrap\033[0m " << GREEN << _name << RESET " constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other)
@@ -31,12 +31,12 @@ ClapTrap::ClapTrap(const ClapTrap &other)
 	_hit_points = other._hit_points;
 	_energy_points = other._energy_points;
 	_attack_damage = other._attack_damage;
-	std::cout << "ClapTrap " << _name << " copy constructor called" << std::endl;
+	std::cout << "\033[1;32mClapTrap\033[0m " << GREEN << _name << RESET << " copy constructor called" << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap &other)
 {
-	std::cout << "Copy assignment operator called for ClapTrap " << _name << std::endl;
+	std::cout << "Copy assignment operator called for \033[1;32mClapTrap\033[0m " << GREEN << _name << RESET << std::endl;
 	if (this != &other) 
 	{
 		this->_hit_points = other._hit_points;
@@ -48,20 +48,20 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &other)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "ClapTrap " << _name << " destructor called" << std::endl;
+	std::cout << "\033[1;32mClapTrap\033[0m " << GREEN << _name << RESET << " destructor called" << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target)
 {
 	if (_energy_points > 0 && _hit_points > 0)
 	{
-		std::cout << "ClapTrap " << _name << " attacks " 
+		std::cout << "\033[1;32mClapTrap\033[0m " << GREEN << _name << RESET << " attacks " 
 		<< target << ", causing " << _attack_damage << " points of damage!" << std::endl;
 		_energy_points--;
 	}
 	else
 	{
-		std::cout << "ClapTrap " << _name << " doesn't have enough energy or is dead and can't attack." << std::endl;
+		std::cout << "\033[1;32mClapTrap\033[0m " << GREEN << _name << RESET << " doesn't have enough energy or is dead and can't attack." << std::endl;
 	}
 }
 
@@ -72,20 +72,20 @@ void ClapTrap::takeDamage(unsigned int amount)
 		if (_hit_points <= 0)
 		{
 			_hit_points = 0;
-			std::cout << "ClapTrap " << _name << " takes damage and lose " << _hit_points 
+			std::cout << "\033[1;32mClapTrap\033[0m " << GREEN << _name << RESET << " takes damage and lose " << _hit_points 
 			<< " points of damage!" << std::endl;
-			std::cout << "ClapTrap " << _name << " died!!!" << std::endl;	
+			std::cout << "\033[1;32mClapTrap\033[0m " << GREEN << _name << RESET << " died!!!" << std::endl;	
 		}	
 		else
 		{
 			_hit_points -= amount;
-			std::cout << "ClapTrap " << _name << " takes damage and lose " << amount  
+			std::cout << "\033[1;32mClapTrap\033[0m " << GREEN << _name << RESET << " takes damage and lose " << amount  
 			<< " points of damage!" << std::endl;
 		}
 	}
 	else
 	{
-		std::cout << "ClapTrap " << _name << " is already dead" << std::endl;
+		std::cout << "\033[1;32mClapTrap\033[0m " << GREEN << _name << RESET << " is already dead" << std::endl;
 	}
 }
 
@@ -93,14 +93,14 @@ void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (_energy_points > 0 && _hit_points > 0)
 	{
-		std::cout << "ClapTrap " << _name << " repairs itself with " << amount 
+		std::cout << "\033[1;32mClapTrap\033[0m " << GREEN << _name << RESET << " repairs itself with " << amount 
 		<< " hit points back" << std::endl;
 		_hit_points += amount;
 		_energy_points--;
 	}
 	else
 	{
-		std::cout << "ClapTrap " << _name << " hasn't enough points to be repaired" << std::endl;
+		std::cout << "\033[1;32mClapTrap\033[0m " << GREEN << _name << RESET << " hasn't enough points to be repaired" << std::endl;
 	}
 }
 
