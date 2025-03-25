@@ -61,7 +61,7 @@ void ClapTrap::attack(const std::string& target)
 	}
 	else
 	{
-		std::cout << "ClapTrap " << _name << " hasn't enough points to attack" << std::endl;
+		std::cout << "ClapTrap " << _name << " doesn't have enough energy or is dead and can't attack." << std::endl;
 	}
 }
 

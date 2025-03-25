@@ -32,6 +32,17 @@ int main()
     // ClackTrap.takeDamage(10);
     // ClackTrap.beRepaired(2);
 
-    ScavTrap scav;
+    ScavTrap Scav;
+    //ScavTrap("NinjaAssassin"); //OBJETO TEMPORAL, no lo guardo en ninguna var
+    ScavTrap NinjaAssassin("NinjaAssassin");
+    // ScavTrap FragTrap("FragTrap");
+    // ScavTrap ClackTrap("ClackTrap");
+    //ScavTrap CopyScav(scav);
+    //Scav = NinjaAssassin;
+    ScavTrap Jeje(NinjaAssassin);
+    
+    Scav.guardGate();
+    Scav.attack("NinjaAssassin");
+
     return (0);
 }
