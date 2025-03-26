@@ -3,21 +3,58 @@
 
 DiamondTrap::DiamondTrap() : ClapTrap(), FragTrap(), ScavTrap(), _name("Default")
 {
-    std::cout << "Default \033[1;33mFragTrap\033[0m constructor called, default name will be: " << YELLOW << _name << RESET << " at " << this << std::endl;
+    std::cout << "Default \033[1;33mDiamondTrap\033[0m constructor called, default name will be: " << YELLOW << _name << RESET << " at " << this << std::endl;
     _hit_points = 100;
     _energy_points = 50;
     _attack_damage = 30;
 }
-// DiamondTrap::DiamondTrap(std::string name); 
-// DiamondTrap::DiamondTrap(const DiamondTrap &other);
-// DiamondTrap& DiamondTrap::operator=(const DiamondTrap &other);
+
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), FragTrap(), ScavTrap(), _name(name)
+{
+    std::cout << "\033[1;33mDiamondTrap\033[0m " << YELLOW << _name << RESET << " constructor called at " << this << std::endl;
+    _hit_points = 100;
+    _energy_points = 50;
+    _attack_damage = 30;
+}
+
+DiamondTrap::DiamondTrap(const DiamondTrap &other) : ClapTrap(other), FragTrap(other), ScavTrap(other), _name(other._name)
+{
+    std::cout << "\033[1;33mDiamondTrap\033[0m " << YELLOW << _name << RESET << " copy constructor called at " << this << std::endl;
+    _hit_points = other._hit_points;
+    _energy_points = other._energy_points;
+    _attack_damage = other._attack_damage;
+}
+
+DiamondTrap& DiamondTrap::operator=(const DiamondTrap &other)
+{
+    std::cout << "Copy assignment operator called for \033[1;33mDiamondTrap\033[0m " << YELLOW << _name << RESET << " at " << this << std::endl;
+    if (this != &other)
+	{
+		ClapTrap::operator=(other);
+        ClapTrap::_name = other.ClapTrap::_name;
+		_name = other._name;
+	}
+	return *this;
+}
 
 DiamondTrap::~DiamondTrap()
 {
     std::cout << "\033[1;33mDiamondTrap\033[0m " << YELLOW << _name << RESET << " destructor called at " << this << std::endl;
 }
 
-//void DiamondTrap::attack();  
+void DiamondTrap::attack(const std::string& target)
+{
+    if (_energy_points > 0 && _hit_points > 0)
+	{
+		std::cout << "\033[1;33mDiamondTrap\033[0m " << YELLOW << _name << RESET << " attacks " 
+		<< target << ", causing " << _attack_damage << " points of damage!" << std::endl;
+		_energy_points--;
+	}
+	else
+	{
+		std::cout << "\033[1;33mDiamondTrap\033[0m " << YELLOW << _name << RESET << " doesn't have enough energy or is dead and can't attack." << std::endl;
+	}
+}
 
 void DiamondTrap::whoAmI()
 {
