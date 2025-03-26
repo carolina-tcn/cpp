@@ -14,15 +14,15 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
-ClapTrap::ClapTrap() : _name("Random"), _hit_points(10), _energy_points(10), _attack_damage(10)
+ClapTrap::ClapTrap() : _name("Default_clap_name"), _hit_points(10), _energy_points(10), _attack_damage(10)
 {
-	std::cout << "Default \033[1;32mClapTrap\033[0m constructor called, default name will be: "  << GREEN << _name << RESET << std::endl;
+	std::cout << "Default \033[1;32mClapTrap\033[0m constructor called, default name will be: "  << GREEN << _name << RESET << " at " << this << std::endl;
 }
 
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hit_points(10), _energy_points(10), _attack_damage(10)
 {
-	std::cout << "\033[1;32mClapTrap\033[0m " << GREEN << _name << RESET " constructor called" << std::endl;
+	std::cout << "\033[1;32mClapTrap\033[0m " << GREEN << _name << RESET " constructor called at " << this << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other)
@@ -31,12 +31,12 @@ ClapTrap::ClapTrap(const ClapTrap &other)
 	_hit_points = other._hit_points;
 	_energy_points = other._energy_points;
 	_attack_damage = other._attack_damage;
-	std::cout << "\033[1;32mClapTrap\033[0m " << GREEN << _name << RESET << " copy constructor called" << std::endl;
+	std::cout << "\033[1;32mClapTrap\033[0m " << GREEN << _name << RESET << " copy constructor called at " << this << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap &other)
 {
-	std::cout << "Copy assignment operator called for \033[1;32mClapTrap\033[0m " << GREEN << _name << RESET << std::endl;
+	std::cout << "Copy assignment operator called for \033[1;32mClapTrap\033[0m " << GREEN << _name << RESET << " at " << this << std::endl;
 	if (this != &other) 
 	{
 		this->_hit_points = other._hit_points;
@@ -48,7 +48,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &other)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "\033[1;32mClapTrap\033[0m " << GREEN << _name << RESET << " destructor called" << std::endl;
+	std::cout << "\033[1;32mClapTrap\033[0m " << GREEN << _name << RESET << " destructor called at " << this  << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target)
@@ -103,34 +103,3 @@ void ClapTrap::beRepaired(unsigned int amount)
 		std::cout << "\033[1;32mClapTrap\033[0m " << GREEN << _name << RESET << " hasn't enough points to be repaired" << std::endl;
 	}
 }
-
-//Getters y setters CONTROL K Y CONTROL C, comand u
-// int ClapTrap::getHitPoints() const
-// {
-//  	return  (hit_points);	
-// }
-
-// int ClapTrap::getEnergyPoints() const
-// {
-// 	return (energy_points);
-// }
-
-// int ClapTrap::getAttackPoints() const
-// {
-// 	return (attack_damage);
-// }
-
-// void ClapTrap::setHitPoints(int const points)
-// {
-// 	this->hit_points = points;
-// }
-
-// void ClapTrap::setEnergyPoints(int const points)
-// {
-// 	this->energy_points = points;
-// }
-
-// void ClapTrap::setAttackDamage(int const points)
-// {
-// 	this->attack_damage = points;
-// }

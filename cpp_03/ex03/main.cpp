@@ -16,5 +16,7 @@
 
 int main()
 {
+    DiamondTrap Shine;
+
     return (0);
 }

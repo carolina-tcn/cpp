@@ -3,7 +3,7 @@
  
 ScavTrap::ScavTrap() : ClapTrap()
 {
-	std::cout << "Default \033[1;34mScavTrap\033[0m constructor called, default name will be: " << BLUE << _name << RESET << std::endl;
+	std::cout << "Default \033[1;34mScavTrap\033[0m constructor called, default name will be: " << BLUE << _name << RESET << " at " << this << std::endl;
     _hit_points = 100;
     _energy_points = 50;
     _attack_damage = 20;
@@ -11,7 +11,7 @@ ScavTrap::ScavTrap() : ClapTrap()
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-    std::cout << "\033[1;34mScavTrap\033[0m " << BLUE << _name << RESET << " constructor called" << std::endl;
+    std::cout << "\033[1;34mScavTrap\033[0m " << BLUE << _name << RESET << " constructor called at " << this << std::endl;
     _hit_points = 100;
     _energy_points = 50;
     _attack_damage = 20;
@@ -19,12 +19,12 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 
 ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
 {
-	std::cout << "\033[1;34mScavTrap\033[0m " << BLUE << _name << RESET << " copy constructor called" << std::endl;
+	std::cout << "\033[1;34mScavTrap\033[0m " << BLUE << _name << RESET << " copy constructor called at " << this << std::endl;
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap &other)
 {
-  	std::cout << "Copy assignment operator called for \033[1;34mScavTrap\033[0m " << BLUE << _name << RESET << std::endl;
+  	std::cout << "Copy assignment operator called for \033[1;34mScavTrap\033[0m " << BLUE << _name << RESET " at " << this << std::endl;
 	if (this != &other) 
 		ClapTrap::operator=(other);
 	return (*this);  
@@ -32,7 +32,7 @@ ScavTrap& ScavTrap::operator=(const ScavTrap &other)
 
 ScavTrap::~ScavTrap()
 {
-    std::cout << "\033[1;34mScavTrap\033[0m " << BLUE << _name << RESET << " destructor called" << std::endl;
+    std::cout << "\033[1;34mScavTrap\033[0m " << BLUE << _name << RESET << " destructor called at " << this << std::endl;
 }
 
 void ScavTrap::attack(const std::string& target)
