@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 16:56:07 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/03/20 18:19:26 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/03/27 12:39:37 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,34 +103,3 @@ void ClapTrap::beRepaired(unsigned int amount)
 		std::cout << "ClapTrap " << _name << " hasn't enough points to be repaired" << std::endl;
 	}
 }
-
-//Getters y setters CONTROL K Y CONTROL C, comand u
-// int ClapTrap::getHitPoints() const
-// {
-//  	return  (hit_points);	
-// }
-
-// int ClapTrap::getEnergyPoints() const
-// {
-// 	return (energy_points);
-// }
-
-// int ClapTrap::getAttackPoints() const
-// {
-// 	return (attack_damage);
-// }
-
-// void ClapTrap::setHitPoints(int const points)
-// {
-// 	this->hit_points = points;
-// }
-
-// void ClapTrap::setEnergyPoints(int const points)
-// {
-// 	this->energy_points = points;
-// }
-
-// void ClapTrap::setAttackDamage(int const points)
-// {
-// 	this->attack_damage = points;
-// }
