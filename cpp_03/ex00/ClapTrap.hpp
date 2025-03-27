@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 16:55:49 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/03/20 18:17:41 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/03/27 12:38:54 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ class ClapTrap
 		int			_attack_damage;
 
 	public:
-		ClapTrap(); //constructor por defecto
-		ClapTrap(std::string name); //name is passed as param to constructor
-		ClapTrap(const ClapTrap &other); //constructor de copia
-		ClapTrap& operator=(const ClapTrap &other); //operador de asignacion
-		~ClapTrap(); //destructor
+		ClapTrap();
+		ClapTrap(std::string name);
+		ClapTrap(const ClapTrap &other);
+		ClapTrap& operator=(const ClapTrap &other);
+		~ClapTrap();
 
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
