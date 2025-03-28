@@ -17,22 +17,22 @@
 int main()
 {
     std::cout << "\n🛠️  Creating FragTrap A...\n" << std::endl;
-    FragTrap A("Alpha");
+    FragTrap a("Alpha");
 
     std::cout << "\n🤝 Calling highFivesGuys() on A...\n" << std::endl;
-    A.highFivesGuys();
+    a.highFivesGuys();
 
     std::cout << "\n🛠️  Creating FragTrap B using copy constructor from A...\n" << std::endl;
-    FragTrap B(A);
+    FragTrap b(a);
 
     std::cout << "\n🎯 A attacks target 'BetaBot'\n" << std::endl;
-    A.attack("BetaBot");
+    a.attack("BetaBot");
 
     std::cout << "\n🛠️  Creating FragTrap C with name 'Charlie'...\n" << std::endl;
-    FragTrap C("Charlie");
+    FragTrap c("Charlie");
 
     std::cout << "\n🔁 Assigning C = A using operator=...\n" << std::endl;
-    C = A;
+    c = a;
 
     std::cout << "\n💥 Exiting main, destructors will now be called...\n" << std::endl;
 

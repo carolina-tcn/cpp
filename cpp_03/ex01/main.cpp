@@ -15,15 +15,15 @@
 
 int main()
 {
-    ScavTrap Scav;
-    ScavTrap NinjaAssassin("NinjaAssassin");
-    ScavTrap FragTrap("FragTrap");
-    ScavTrap ClackTrap("ClackTrap");
+    ScavTrap scav;
+    ScavTrap ninja_assassin("NinjaAssassin");
+    ScavTrap fragtrap("FragTrap");
+    ScavTrap clacktrap("ClackTrap");
     
-    Scav.guardGate();
-    Scav.attack("NinjaAssassin");
-    NinjaAssassin.attack("Scav");
-    NinjaAssassin.guardGate();
+    scav.guardGate();
+    scav.attack("NinjaAssassin");
+    ninja_assassin.attack("Scav");
+    ninja_assassin.guardGate();
 
     return (0);
 }

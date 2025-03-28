@@ -16,19 +16,19 @@
 
 int main()
 {
-    ClapTrap NinjaAssassin;
-    ClapTrap FragTrap("FragTrap");
-    ClapTrap ClackTrap("ClackTrap");
-    ClapTrap CopyNinjaAssassin(NinjaAssassin);
-    ClackTrap = FragTrap;
+    ClapTrap ninja_assassin;
+    ClapTrap fragtrap("FragTrap");
+    ClapTrap clacktrap("ClackTrap");
+    ClapTrap copy_ninja_assassin(ninja_assassin);
+    clacktrap = fragtrap;
 
-    NinjaAssassin.attack("FragTrap");
-    FragTrap.takeDamage(3);
-    FragTrap.beRepaired(4);
-    FragTrap.takeDamage(15);
-    ClackTrap.attack("NinjaAssassin");
-    ClackTrap.takeDamage(10);
-    ClackTrap.beRepaired(2);
+    ninja_assassin.attack("FragTrap");
+    fragtrap.takeDamage(3);
+    fragtrap.beRepaired(4);
+    fragtrap.takeDamage(15);
+    clacktrap.attack("NinjaAssassin");
+    clacktrap.takeDamage(10);
+    clacktrap.beRepaired(2);
 
     return (0);
 }
