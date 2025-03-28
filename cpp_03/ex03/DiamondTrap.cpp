@@ -56,16 +56,7 @@ DiamondTrap::~DiamondTrap()
 
 void DiamondTrap::attack(const std::string& target)
 {
-    if (_energy_points > 0 && _hit_points > 0)
-	{
-		std::cout << "\033[1;33mDiamondTrap\033[0m " << YELLOW << _name << RESET << " attacks " 
-		<< target << ", causing " << _attack_damage << " points of damage!" << std::endl;
-		_energy_points--;
-	}
-	else
-	{
-		std::cout << "\033[1;33mDiamondTrap\033[0m " << YELLOW << _name << RESET << " doesn't have enough energy or is dead and can't attack." << std::endl;
-	}
+    ScavTrap::attack(target);
 }
 
 void DiamondTrap::whoAmI()
