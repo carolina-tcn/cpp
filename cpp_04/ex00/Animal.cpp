@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carolinatacconis <carolinatacconis@stud    +#+  +:+       +#+        */
+/*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 21:39:45 by carolinatac       #+#    #+#             */
-/*   Updated: 2025/05/01 11:57:55 by carolinatac      ###   ########.fr       */
+/*   Updated: 2025/05/01 20:55:41 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,20 @@
 //Constructors
 Animal::Animal()
 {
-	std::cout << "Animal created." << std::endl;
+	std::cout << RED << "Animal created." << RESET << std::endl;
 }
 
 Animal::Animal(const Animal &other)
 {
-	std::cout << "Animal copy created." << std::endl;
+	std::cout << RED << "Animal copy created." << RESET << std::endl;
 	*this = other;
 
 }
 
 //Copy assignment operator
-Animal& Animal::operator=(const Animal &other)
+Animal&	Animal::operator=(const Animal &other)
 {
-	std::cout << "Copy assignment operator for Animal called." << std::endl;
+	std::cout << RED << "Copy assignment operator for Animal called." << RESET << std::endl;
 	if (this != &other)
 		this->_type = other._type;
 	return (*this);
@@ -38,22 +38,22 @@ Animal& Animal::operator=(const Animal &other)
 //Destructor
 Animal::~Animal()
 {
-	std::cout << "Animal destroyed." << std::endl;
+	std::cout << RED << "Animal destroyed." << RESET << std::endl;
 }
 
 //Function
 void	Animal::makeSound() const
 {
-	std::cout << "..." << std::endl;
+	std::cout << RED << "..." << RESET << std::endl;
 }
 
 //Getter and Setter
-std::string     Animal::getType() const
+std::string	Animal::getType() const
 {
 	return (_type);
 }
 
-std::string     Animal::setType(onst std::string& type)
+void	Animal::setType(const std::string& type)
 {
 	_type = type;	
 }
