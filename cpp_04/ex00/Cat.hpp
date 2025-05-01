@@ -6,7 +6,7 @@
 /*   By: carolinatacconis <carolinatacconis@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 21:45:17 by carolinatac       #+#    #+#             */
-/*   Updated: 2025/04/27 22:05:53 by carolinatac      ###   ########.fr       */
+/*   Updated: 2025/05/01 11:30:19 by carolinatac      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ class Cat : public Animal
     
 	public:
         Cat();
-        Cat(std::string name); 
         Cat(const Cat &other);
         Cat& operator=(const Cat &other);
         ~Cat();

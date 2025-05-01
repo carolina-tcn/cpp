@@ -6,7 +6,7 @@
 /*   By: carolinatacconis <carolinatacconis@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 21:44:30 by carolinatac       #+#    #+#             */
-/*   Updated: 2025/05/01 11:17:06 by carolinatac      ###   ########.fr       */
+/*   Updated: 2025/05/01 11:57:16 by carolinatac      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,12 @@ class Animal
    
     public:
         Animal();
-        Animal(std::string name); 
         Animal(const Animal &other);
         Animal& operator=(const Animal &other);
         virtual ~Animal();
 
-    	virtual void	makeSound();
+    	virtual void	makeSound() const;
         std::string     getType() const;
+        std::string     setType(const std::string& _type);
+
 };

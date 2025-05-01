@@ -6,30 +6,27 @@
 /*   By: carolinatacconis <carolinatacconis@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 21:39:45 by carolinatac       #+#    #+#             */
-/*   Updated: 2025/05/01 11:18:14 by carolinatac      ###   ########.fr       */
+/*   Updated: 2025/05/01 11:57:55 by carolinatac      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include <iostream>
 
-Animal::Animal() : _type("Animal")
+//Constructors
+Animal::Animal()
 {
-	std::cout << "Animal default constructor called." << std::endl;
+	std::cout << "Animal created." << std::endl;
 }
 
-Animal::Animal(std::string name) : _type(name)
+Animal::Animal(const Animal &other)
 {
-	std::cout << "Animal constructor called" << std::endl;
-
-}
-
-Animal::Animal(const Animal &other) : _type(other._type)
-{
-	std::cout << "Animal copy constructor called" << std::endl;
+	std::cout << "Animal copy created." << std::endl;
+	*this = other;
 
 }
 
+//Copy assignment operator
 Animal& Animal::operator=(const Animal &other)
 {
 	std::cout << "Copy assignment operator for Animal called." << std::endl;
@@ -38,17 +35,25 @@ Animal& Animal::operator=(const Animal &other)
 	return (*this);
 }
 
+//Destructor
 Animal::~Animal()
 {
 	std::cout << "Animal destroyed." << std::endl;
 }
 
-void	Animal::makeSound()
+//Function
+void	Animal::makeSound() const
 {
-	std::cout << "" << std::endl;
+	std::cout << "..." << std::endl;
 }
 
+//Getter and Setter
 std::string     Animal::getType() const
 {
 	return (_type);
+}
+
+std::string     Animal::setType(onst std::string& type)
+{
+	_type = type;	
 }
