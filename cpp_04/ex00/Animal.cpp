@@ -6,7 +6,7 @@
 /*   By: carolinatacconis <carolinatacconis@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 21:39:45 by carolinatac       #+#    #+#             */
-/*   Updated: 2025/04/27 22:23:57 by carolinatac      ###   ########.fr       */
+/*   Updated: 2025/05/01 11:18:14 by carolinatac      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,32 +15,40 @@
 
 Animal::Animal() : _type("Animal")
 {
-	std::cout << "Animal created." << std::endl;
+	std::cout << "Animal default constructor called." << std::endl;
 }
 
-Animal::Animal(std::string name)
+Animal::Animal(std::string name) : _type(name)
 {
-	std::cout << "Animal copied." << std::endl;
+	std::cout << "Animal constructor called" << std::endl;
 
 }
 
-Animal::Animal(const Animal &other)
+Animal::Animal(const Animal &other) : _type(other._type)
 {
-	std::cout << "" << std::endl;
+	std::cout << "Animal copy constructor called" << std::endl;
 
 }
 
 Animal& Animal::operator=(const Animal &other)
 {
+	std::cout << "Copy assignment operator for Animal called." << std::endl;
 	if (this != &other)
 		this->_type = other._type;
-	std::cout << "" << std::endl;
-	
-
+	return (*this);
 }
 
 Animal::~Animal()
 {
 	std::cout << "Animal destroyed." << std::endl;
-	
+}
+
+void	Animal::makeSound()
+{
+	std::cout << "" << std::endl;
+}
+
+std::string     Animal::getType() const
+{
+	return (_type);
 }

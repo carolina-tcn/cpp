@@ -6,7 +6,7 @@
 /*   By: carolinatacconis <carolinatacconis@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 21:44:30 by carolinatac       #+#    #+#             */
-/*   Updated: 2025/04/27 22:17:35 by carolinatac      ###   ########.fr       */
+/*   Updated: 2025/05/01 11:17:06 by carolinatac      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ class Animal
         virtual ~Animal();
 
     	virtual void	makeSound();
-        std::string getType() const;
+        std::string     getType() const;
 };
