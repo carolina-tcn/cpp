@@ -6,13 +6,13 @@
 /*   By: carolinatacconis <carolinatacconis@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 21:46:34 by carolinatac       #+#    #+#             */
-/*   Updated: 2025/05/01 11:30:27 by carolinatac      ###   ########.fr       */
+/*   Updated: 2025/05/02 19:42:42 by carolinatac      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <string>
+#include "Animal.hpp"
 
 class Dog : public Animal
 {
@@ -25,5 +25,7 @@ class Dog : public Animal
         Dog& operator=(const Dog &other);
         ~Dog();
 
-		void	makeSound();
+        void	        makeSound() const;
+        std::string     getType() const;
+        void            setType(const std::string& _type);
 };

@@ -3,18 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: carolinatacconis <carolinatacconis@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 21:39:45 by carolinatac       #+#    #+#             */
-/*   Updated: 2025/05/01 20:55:41 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/02 19:32:07 by carolinatac      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
-#include <iostream>
 
 //Constructors
-Animal::Animal()
+Animal::Animal() : _type("")
 {
 	std::cout << RED << "Animal created." << RESET << std::endl;
 }

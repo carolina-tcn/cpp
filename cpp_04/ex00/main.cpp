@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: carolinatacconis <carolinatacconis@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 17:22:36 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/05/01 21:02:14 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/02 19:44:32 by carolinatac      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
-#include <iostream>
+#include "Dog.hpp"
 
 int main()
 {
@@ -29,19 +29,19 @@ int main()
     //c.setType("Otro");
    // std::cout << "tipo de c: " << c.getType() << std::endl;
 
-    Cat cat;
-    Cat cat_a(cat);
-    cat.makeSound();
+    // Cat cat;
+    // Cat cat_a(cat);
+    // cat.makeSound();
     
     //---------------Subject
-    // const Animal* meta = new Animal();
-    // const Animal* j = new Dog();
-    // const Animal* i = new Cat();
-    // std::cout << j->getType() << " " << std::endl;
-    // std::cout << i->getType() << " " << std::endl;
-    // i->makeSound(); //will output the cat sound!
-    // j->makeSound();
-    // meta->makeSound();
+    const Animal* meta = new Animal();
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
+    std::cout << j->getType() << " " << std::endl;
+    std::cout << i->getType() << " " << std::endl;
+    i->makeSound(); //will output the cat sound!
+    j->makeSound();
+    meta->makeSound();
     
     return (0);
 }

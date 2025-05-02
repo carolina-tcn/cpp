@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: carolinatacconis <carolinatacconis@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 21:47:53 by carolinatac       #+#    #+#             */
-/*   Updated: 2025/05/01 20:58:26 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/02 19:43:03 by carolinatac      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 #include <iostream>
 
 //Constructors
-Cat::Cat() : Animal()
+Cat::Cat() : Animal(), _type("Cat")
 {
 	std::cout << YELLOW << "Cat created." << RESET << std::endl;
-
 }
 
 Cat::Cat(const Cat &other) : Animal(other)

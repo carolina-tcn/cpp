@@ -3,22 +3,22 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+         #
+#    By: carolinatacconis <carolinatacconis@stud    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/12 17:54:50 by ctacconi          #+#    #+#              #
-#    Updated: 2025/05/01 20:57:43 by ctacconi         ###   ########.fr        #
+#    Updated: 2025/05/02 19:42:55 by carolinatac      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = polimorphism
 
-SRC = main.cpp Animal.cpp Cat.cpp #Dog.cpp
+SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp
 
 CC = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
-HEAD = Animal.hpp Cat.hpp #Dog.hpp
+HEAD = Animal.hpp Cat.hpp Dog.hpp
 
 OBJ = $(SRC:.cpp=.o)
 
