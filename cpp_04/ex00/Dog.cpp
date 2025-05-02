@@ -6,7 +6,7 @@
 /*   By: carolinatacconis <carolinatacconis@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 21:48:18 by carolinatac       #+#    #+#             */
-/*   Updated: 2025/05/02 19:43:15 by carolinatac      ###   ########.fr       */
+/*   Updated: 2025/05/02 20:09:11 by carolinatac      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 #include <iostream>
 
 //Constructors
-Dog::Dog() : Animal(), _type("Dog")
+Dog::Dog()
 {
-	std::cout << BLUE << "Dog created." << RESET << std::endl;
+	std::cout << BLUE << "🐶Dog created." << RESET << std::endl;
+	_type = "Dog";
 }
 
 Dog::Dog(const Dog &other) : Animal(other)
@@ -46,13 +47,3 @@ void	Dog::makeSound() const
 	std::cout << BLUE << "WUAUUUUUUU..." << RESET << std::endl;
 }
 
-//Getter and Setter
-std::string	Dog::getType() const
-{
-	return (_type);
-}
-
-void	Dog::setType(const std::string& type)
-{
-	_type = type;
-}

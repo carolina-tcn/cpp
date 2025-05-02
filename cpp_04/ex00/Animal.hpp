@@ -6,13 +6,12 @@
 /*   By: carolinatacconis <carolinatacconis@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 21:44:30 by carolinatac       #+#    #+#             */
-/*   Updated: 2025/05/02 19:17:05 by carolinatac      ###   ########.fr       */
+/*   Updated: 2025/05/02 19:52:23 by carolinatac      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <string>
 #include <iostream>
 
 #define RED     "\033[1;31m"
@@ -32,7 +31,7 @@ class Animal
         Animal();
         Animal(const Animal &other);
         Animal& operator=(const Animal &other);
-        ~Animal();
+        virtual ~Animal();
 
     	virtual void	makeSound() const;
         std::string     getType() const;

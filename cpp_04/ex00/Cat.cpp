@@ -6,7 +6,7 @@
 /*   By: carolinatacconis <carolinatacconis@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 21:47:53 by carolinatac       #+#    #+#             */
-/*   Updated: 2025/05/02 19:43:03 by carolinatac      ###   ########.fr       */
+/*   Updated: 2025/05/02 20:09:45 by carolinatac      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 #include <iostream>
 
 //Constructors
-Cat::Cat() : Animal(), _type("Cat")
+Cat::Cat()
 {
-	std::cout << YELLOW << "Cat created." << RESET << std::endl;
+	std::cout << YELLOW << "🐱Cat created." << RESET << std::endl;
+	_type = "Cat";
 }
 
 Cat::Cat(const Cat &other) : Animal(other)
@@ -45,15 +46,4 @@ Cat::~Cat()
 void	Cat::makeSound() const
 {
 	std::cout << YELLOW << "MIAUUUUUUU...." << RESET << std::endl;
-}
-
-//Getter and Setter
-std::string	Cat::getType() const
-{
-	return(_type);
-}
-
-void	Cat::setType(const std::string& type)
-{
-	_type = type;
 }
