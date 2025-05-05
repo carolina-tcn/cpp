@@ -6,13 +6,15 @@
 /*   By: carolinatacconis <carolinatacconis@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 13:40:50 by carolinatac       #+#    #+#             */
-/*   Updated: 2025/05/05 12:18:46 by carolinatac      ###   ########.fr       */
+/*   Updated: 2025/05/05 20:35:54 by carolinatac      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include "AMateria.hpp"
+
+class AMateria;
 
 class ICharacter
 {

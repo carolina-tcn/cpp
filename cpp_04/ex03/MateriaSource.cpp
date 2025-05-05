@@ -6,13 +6,13 @@
 /*   By: carolinatacconis <carolinatacconis@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 12:20:29 by carolinatac       #+#    #+#             */
-/*   Updated: 2025/05/05 20:25:00 by carolinatac      ###   ########.fr       */
+/*   Updated: 2025/05/05 20:37:21 by carolinatac      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
 
-MateriaSource::~MateriaSource()
+MateriaSource::MateriaSource()
 {
 	std::cout << MAGENTA << "MateriaSource created." << RESET << std::endl;	
 	for(int i = 0; i < 4; ++i)
