@@ -6,16 +6,19 @@
 /*   By: carolinatacconis <carolinatacconis@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 13:40:52 by carolinatac       #+#    #+#             */
-/*   Updated: 2025/05/05 19:27:40 by carolinatac      ###   ########.fr       */
+/*   Updated: 2025/05/05 20:05:09 by carolinatac      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-Character::Character()
+Character::Character() : _name("")
 {
+	std::cout << CYAN << "Character created." << RESET << std::endl;	
 	for(int i = 0; i < 4; ++i)
 		_slot[i] = NULL;
+	for (int i = 0; i < 100; ++i)
+		_floor[i] = NULL;
 }
 
 Character::Character(std::string const &name) : _name(name)
@@ -23,6 +26,8 @@ Character::Character(std::string const &name) : _name(name)
 	std::cout << CYAN << "Character " << _name << " created." << RESET << std::endl; 
 	for(int i = 0; i < 4; ++i)
 		_slot[i] = NULL;
+	for (int i = 0; i < 100; ++i)
+		_floor[i] = NULL;
 }
 
 Character::Character(const Character &other)
@@ -30,6 +35,8 @@ Character::Character(const Character &other)
 	std::cout << CYAN << "Character copy created." << RESET << std::endl;
 	for(int i = 0; i < 4; ++i)
 		_slot[i] = NULL;
+	for (int i = 0; i < 100; ++i)
+		_floor[i] = NULL;
 	*this = other;
 }
 
@@ -42,18 +49,12 @@ Character&	Character::operator=(const Character &other)
 		for(int i = 0; i < 4; ++i)
 		{
 			if(this->_slot[i])
-			{
 				delete(this->_slot[i]);
-				this->_slot[i] = NULL;
-			}
-		}
-		for(int i = 0; i < 4; ++i)
-		{
 			if(other._slot[i])
 				this->_slot[i] = other._slot[i]->clone();
 		}
-		return(*this);
 	}
+	return(*this);
 }
 
 Character::~Character()
@@ -64,8 +65,12 @@ Character::~Character()
 		if(_slot[i])
 			delete(_slot[i]);
 	}
+	for (int i = 0; i < 100; ++i)
+{
+	if (_floor[i])
+		delete (_floor[i]);
 }
-
+}
 
 std::string const	&Character::getName() const
 {
@@ -74,15 +79,37 @@ std::string const	&Character::getName() const
 
 void	Character::equip(AMateria* m)
 {
-	
+	if(!m)
+		return ;
+	for(int i = 0; i < 4; ++i)
+	{
+		if(!this->_slot[i])
+		{
+			this->_slot[i] = m;
+			break ;
+		}
+	}
 }
 
 void	Character::unequip(int idx)
 {
-	
+	if (idx < 0 || idx >= 4 || !this->_slot[idx])
+		return ;
+	for (int i = 0; i < 100; i++)
+	{
+		if (!this->_floor[i])
+		{
+			this->_floor[i] = this->_slot[idx];
+			break ;
+		}
+	}
+	_slot[idx] = NULL;
 }
 
 void	Character::use(int idx, ICharacter& target)
 {
-	
+	if (idx < 0 || idx >= 4 || !this->_slot[idx])
+		return ;
+	_slot[idx]->use(target);
 }
+

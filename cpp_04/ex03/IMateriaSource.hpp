@@ -6,11 +6,11 @@
 /*   By: carolinatacconis <carolinatacconis@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 12:20:33 by carolinatac       #+#    #+#             */
-/*   Updated: 2025/05/05 12:22:14 by carolinatac      ###   ########.fr       */
+/*   Updated: 2025/05/05 20:32:07 by carolinatac      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragme once
+#pragma once
 
 #include "AMateria.hpp"
 
