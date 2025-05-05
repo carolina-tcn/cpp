@@ -1,15 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: carolinatacconis <carolinatacconis@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/04 13:40:50 by carolinatac       #+#    #+#             */
-/*   Updated: 2025/05/04 14:16:11 by carolinatac      ###   ########.fr       */
+/*   Created: 2025/05/04 14:15:22 by carolinatac       #+#    #+#             */
+/*   Updated: 2025/05/04 14:17:03 by carolinatac      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-
-#include "AMateria.hpp"
+#include "Ice.hpp"

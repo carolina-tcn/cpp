@@ -6,7 +6,7 @@
 /*   By: carolinatacconis <carolinatacconis@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 13:20:29 by carolinatac       #+#    #+#             */
-/*   Updated: 2025/05/04 13:59:50 by carolinatac      ###   ########.fr       */
+/*   Updated: 2025/05/05 11:36:01 by carolinatac      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ AMateria& AMateria::operator=(const AMateria &other)
 	if(this != &other)
 		this->_type = other._type;
 	return(*this);
-	
 }
 AMateria::~AMateria()
 {
