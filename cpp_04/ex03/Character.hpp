@@ -6,7 +6,7 @@
 /*   By: carolinatacconis <carolinatacconis@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 12:52:51 by carolinatac       #+#    #+#             */
-/*   Updated: 2025/05/05 12:55:02 by carolinatac      ###   ########.fr       */
+/*   Updated: 2025/05/05 19:23:46 by carolinatac      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,14 @@ class Character : public ICharacter
 {
 	private:
 		std::string	_name;
-		AMateria*	_inventory[4];
-		AMateria*	_floor[100];
-		int			_floorCount;
+		AMateria*	_slot[4];
+		Character();
 
 	public:
 		Character(std::string const &name);
 		Character(const Character &other);
 		Character	&operator=(const Character &other);
-		virtual	~Character();
+		~Character();
 
 		std::string const	&getName() const;
 
