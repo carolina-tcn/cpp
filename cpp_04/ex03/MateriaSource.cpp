@@ -6,7 +6,7 @@
 /*   By: carolinatacconis <carolinatacconis@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 12:20:29 by carolinatac       #+#    #+#             */
-/*   Updated: 2025/05/05 20:37:21 by carolinatac      ###   ########.fr       */
+/*   Updated: 2025/05/06 16:26:44 by carolinatac      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ void MateriaSource::learnMateria(AMateria* m)
 		if(!_mat[i])
 		{
 			_mat[i] = m;
+			std::cout << MAGENTA << "New Materia learned." << RESET << std::endl; 
 			break ;
 		}
 	}
@@ -71,7 +72,10 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 	for (int i = 0; i < 4; ++i)
 	{
 		if (_mat[i] && _mat[i]->getType() == type)
+		{
+			std::cout << MAGENTA << "New Materia " << type << " created." << RESET << std::endl;
 			return _mat[i]->clone();
+		}
 	}
 	return (NULL);
 }
