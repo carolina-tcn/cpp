@@ -6,7 +6,7 @@
 /*   By: carolinatacconis <carolinatacconis@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 17:26:05 by carolinatac       #+#    #+#             */
-/*   Updated: 2025/05/06 18:28:33 by carolinatac      ###   ########.fr       */
+/*   Updated: 2025/05/07 16:02:00 by carolinatac      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 #include <string>
 #include <iostream>
+#include <exception>
 
 class	Bureaucrat
 {
