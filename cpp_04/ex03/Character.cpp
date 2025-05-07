@@ -6,7 +6,7 @@
 /*   By: carolinatacconis <carolinatacconis@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 13:40:52 by carolinatac       #+#    #+#             */
-/*   Updated: 2025/05/05 20:05:09 by carolinatac      ###   ########.fr       */
+/*   Updated: 2025/05/07 14:42:27 by carolinatac      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Character::Character() : _name("")
 		_floor[i] = NULL;
 }
 
-Character::Character(std::string const &name) : _name(name)
+Character::Character(const std::string &name) : _name(name)
 {
 	std::cout << CYAN << "Character " << _name << " created." << RESET << std::endl; 
 	for(int i = 0; i < 4; ++i)
