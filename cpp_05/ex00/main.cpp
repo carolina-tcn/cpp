@@ -6,7 +6,7 @@
 /*   By: carolinatacconis <carolinatacconis@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 17:26:08 by carolinatac       #+#    #+#             */
-/*   Updated: 2025/05/07 16:16:36 by carolinatac      ###   ########.fr       */
+/*   Updated: 2025/05/07 17:15:46 by carolinatac      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,57 @@ class exception {
 	  exception& operator= (const exception&) throw();
 	  virtual ~exception() throw();
 	  virtual const char* what() const throw();
+	  //método que devuelve un mensaje explicando el error
 	};
 
 int	main()
 {
+	// try
+	// {
+	// 	Bureaucrat funcionario("Vago", 150);
+	// 	std::cout << funcionario << std::endl;
+	// }
+	// catch(const std::exception& e)
+	// {
+	// 	std::cerr << e.what() << std::endl;
+	// }
+	// try
+	// {
+	// 	Bureaucrat funcionario("Vago", 151);
+	// 	std::cout << funcionario << std::endl;
+	// }
+	// catch(const std::exception& e)
+	// {
+	// 	std::cerr << e.what() << std::endl;
+	// }
+	// try
+	// {
+	// 	Bureaucrat funcionario("Vago", -3);
+	// 	std::cout << funcionario << std::endl;
+	// }
+	// catch(const std::exception& e)
+	// {
+	// 	std::cerr << e.what() << std::endl;
+	// }
+	// try
+	// {
+	// 	Bureaucrat funcionario("Vago", 150);
+	// 	funcionario.decrementGrade();
+	// 	std::cout << funcionario << std::endl;
+	// }
+	// catch(const std::exception& e)
+	// {
+	// 	std::cerr << e.what() << std::endl;
+	// }
 	try
 	{
-		/* code */
+		Bureaucrat funcionario("Vago", 1);
+		funcionario.incrementGrade();
+		std::cout << funcionario << std::endl;
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 	}
-	 
 	return (0);
 }
