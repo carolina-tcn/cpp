@@ -6,13 +6,14 @@
 /*   By: carolinatacconis <carolinatacconis@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 17:28:13 by carolinatac       #+#    #+#             */
-/*   Updated: 2025/05/07 18:16:12 by carolinatac      ###   ########.fr       */
+/*   Updated: 2025/05/07 19:05:39 by carolinatac      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <string>
+#include "Bureaucrat.hpp"
 
 class Form
 {
@@ -25,10 +26,10 @@ class Form
 	public:
 		Form();
 		Form(const Form &other);
-		Form(const Form &other);
+		Form& operator=(const Form& other);
 		~Form();
 
-		std::string			getName() const;
+		const std::string&			getName() const;
 		bool				getSigned() const;
 		int					getGradeSign() const;
 		int					getGradeExec() const;
@@ -41,6 +42,8 @@ class Form
 		{
 			const char* what() const throw();
 		};
+
+		void	beSigned(Bureaucrat &bureaucrat);
 };
 
 std::ofstream	operator<<(std::ofstream &out, const Form& form);

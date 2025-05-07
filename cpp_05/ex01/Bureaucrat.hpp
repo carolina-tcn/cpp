@@ -6,7 +6,7 @@
 /*   By: carolinatacconis <carolinatacconis@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 17:26:05 by carolinatac       #+#    #+#             */
-/*   Updated: 2025/05/07 17:12:05 by carolinatac      ###   ########.fr       */
+/*   Updated: 2025/05/07 19:04:52 by carolinatac      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class	Bureaucrat
 		Bureaucrat& operator=(const Bureaucrat& other);
 		~Bureaucrat();
 
-		std::string	getName() const;
+		const std::string&	getName() const;
 		int			getGrade() const;
 		void		incrementGrade();
 		void		decrementGrade();
