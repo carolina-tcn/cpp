@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carolinatacconis <carolinatacconis@stud    +#+  +:+       +#+        */
+/*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 17:25:59 by carolinatac       #+#    #+#             */
-/*   Updated: 2025/05/07 17:12:42 by carolinatac      ###   ########.fr       */
+/*   Updated: 2025/05/13 20:34:49 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

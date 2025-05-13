@@ -6,11 +6,11 @@
 #    By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/06 17:25:48 by carolinatac       #+#    #+#              #
-#    Updated: 2025/05/13 18:04:40 by ctacconi         ###   ########.fr        #
+#    Updated: 2025/05/13 20:35:40 by ctacconi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = mommy
+NAME = maggots
 
 SRC = main.cpp Bureaucrat.cpp Form.cpp
 
