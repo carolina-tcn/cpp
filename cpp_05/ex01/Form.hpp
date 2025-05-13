@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carolinatacconis <carolinatacconis@stud    +#+  +:+       +#+        */
+/*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 17:28:13 by carolinatac       #+#    #+#             */
-/*   Updated: 2025/05/07 19:05:39 by carolinatac      ###   ########.fr       */
+/*   Updated: 2025/05/13 18:54:49 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <string>
+#include <iostream>
 #include "Bureaucrat.hpp"
 
 class Form
@@ -26,13 +27,15 @@ class Form
 	public:
 		Form();
 		Form(const Form &other);
+		Form(const std::string& name, const int gradeSign, const int gradeExec);
 		Form& operator=(const Form& other);
 		~Form();
 
-		const std::string&			getName() const;
+		const std::string&	getName() const;
 		bool				getSigned() const;
 		int					getGradeSign() const;
 		int					getGradeExec() const;
+		void				beSigned(Bureaucrat &bureaucrat);
 		
 		class GradeTooHighException : public std::exception
 		{
@@ -42,8 +45,6 @@ class Form
 		{
 			const char* what() const throw();
 		};
-
-		void	beSigned(Bureaucrat &bureaucrat);
 };
 
-std::ofstream	operator<<(std::ofstream &out, const Form& form);
+std::ostream&	operator<<(std::ostream &out, const Form& form);
