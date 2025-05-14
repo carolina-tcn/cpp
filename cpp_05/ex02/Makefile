@@ -6,19 +6,19 @@
 #    By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/06 17:25:48 by carolinatac       #+#    #+#              #
-#    Updated: 2025/05/13 20:37:54 by ctacconi         ###   ########.fr        #
+#    Updated: 2025/05/13 21:09:20 by ctacconi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = abstractform
+NAME = abstract
 
-SRC = main.cpp Bureaucrat.cpp Form.cpp
+SRC = main.cpp Bureaucrat.cpp AForm.cpp
 
 CC = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
-HEAD = Bureaucrat.hpp Form.hpp
+HEAD = Bureaucrat.hpp AForm.hpp
 
 OBJ = $(SRC:.cpp=.o)
 

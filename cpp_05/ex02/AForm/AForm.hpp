@@ -14,7 +14,7 @@
 
 #include <string>
 #include <iostream>
-#include "Bureaucrat.hpp"
+#include "../Bureaucrat/Bureaucrat.hpp"
 
 class AForm
 {
@@ -29,14 +29,15 @@ class AForm
 		AForm(const AForm &other);
 		AForm(const std::string& name, const int gradeSign, const int gradeExec);
 		AForm& operator=(const AForm& other);
-		~AForm();
+		virtual ~AForm();
 
 		const std::string&	getName() const;
 		bool				getSigned() const;
 		int					getGradeSign() const;
 		int					getGradeExec() const;
 		void				beSigned(Bureaucrat &bureaucrat);
-		
+		virtual void		execute(Bureaucrat const &executor) = 0;
+
 		class GradeTooHighException : public std::exception
 		{
 			const char* what() const throw();

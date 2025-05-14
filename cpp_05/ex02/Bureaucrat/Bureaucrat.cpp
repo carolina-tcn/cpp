@@ -6,12 +6,12 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 17:25:59 by carolinatac       #+#    #+#             */
-/*   Updated: 2025/05/13 20:42:42 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/13 21:07:20 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "AForm.hpp"
+#include "../AForm/AForm.hpp"
 
 Bureaucrat::Bureaucrat() : _name("Default"), _grade(150) {}
 
