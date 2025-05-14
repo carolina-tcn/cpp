@@ -6,12 +6,13 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 20:57:50 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/05/14 19:45:55 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/14 20:40:51 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 #include <fstream>
+#include <cstdlib>
 
 ShrubberyCreationForm::ShrubberyCreationForm() : _target("") {}
 
@@ -37,21 +38,22 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
     if(this->getSigned() == false)
         throw FormNotSignedException();
     if (executor.getGrade() > this->getGradeExec())
-        throw GradeTooHighException();
-    std::ofstream target_file(_target + "_shrubbery");
+        throw GradeTooLowException();
+    
+    std::ofstream target_file((_target + "_shrubbery").c_str());
+        
     if (!target_file.is_open())
     {
-        std::cerr << "Error: Could not create the file." << std::endl;
-        exit(EXIT_FAILURE);
+        std::cerr << "Error: Could not create the file." << _target + "_shrubbery" << std::endl;
+        return ;
     }
-    target_file << "     ###     " << std::endl;
-    target_file << "    #o###    " << std::endl;
-    target_file << "  #####o###  " << std::endl;
-    target_file << " #o#\#|#/### " << std::endl;
-    target_file << "  ###\|/#o#  " << std::endl;
-    target_file << "   # }|{ #   " << std::endl;
-    target_file << "     }|{     " << std::endl;
-    target_file << "     }|{     " << std::endl;
+    target_file << "     ###          ###          ###     " << std::endl;
+    target_file << "    #o###        #o###        #o###    " << std::endl;
+    target_file << "  #####o###    #####o###    #####o###  " << std::endl;
+    target_file << " #o#\\#|#/###  #o#\\#|#/###  #o#\\#|#/### " << std::endl;
+    target_file << "  ###\\|/#o#    ###\\|/#o#    ###\\|/#o#  " << std::endl;
+    target_file << "   # }|{ #      # }|{ #      # }|{ #   " << std::endl;
+    target_file << "     }|{          }|{          }|{     " << std::endl;
+    target_file << "     }|{          }|{          }|{     " << std::endl;
     target_file.close();
 }
-
