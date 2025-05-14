@@ -6,25 +6,32 @@
 #    By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/06 17:25:48 by carolinatac       #+#    #+#              #
-#    Updated: 2025/05/13 21:09:20 by ctacconi         ###   ########.fr        #
+#    Updated: 2025/05/14 18:15:26 by ctacconi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = abstract
 
-SRC = main.cpp Bureaucrat.cpp AForm.cpp
+SRC = \
+	main.cpp \
+	Bureaucrat/Bureaucrat.cpp \
+	AForm/AForm.cpp \
+	AForm/PresidentialPardonForm/PresidentialPardonForm.cpp \
+	AForm/RobotomyRequestForm/RobotomyRequestForm.cpp \
+	AForm/ShrubberyCreationForm/ShrubberyCreationForm.cpp
 
 CC = c++
 
-FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
+INCLUDES = -IBureaucrat -IAForm -IAForm/PresidentialPardonForm -IAForm/RobotomyRequestForm \
+	-IAForm/ShrubberyCreationForm
 
-HEAD = Bureaucrat.hpp AForm.hpp
+FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic $(INCLUDES)
 
 OBJ = $(SRC:.cpp=.o)
 
 RM = rm -f
 
-%.o: %.cpp Makefile $(HEAD)
+%.o: %.cpp Makefile
 	$(CC) $(FLAGS) -c $< -o $@
 
 all: $(NAME)

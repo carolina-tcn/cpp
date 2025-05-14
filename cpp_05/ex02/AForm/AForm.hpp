@@ -14,7 +14,7 @@
 
 #include <string>
 #include <iostream>
-#include "../Bureaucrat/Bureaucrat.hpp"
+#include "Bureaucrat.hpp"
 
 class AForm
 {
@@ -35,14 +35,19 @@ class AForm
 		bool				getSigned() const;
 		int					getGradeSign() const;
 		int					getGradeExec() const;
+
 		void				beSigned(Bureaucrat &bureaucrat);
-		virtual void		execute(Bureaucrat const &executor) = 0;
+		virtual void		execute(Bureaucrat const &executor) const = 0;
 
 		class GradeTooHighException : public std::exception
 		{
 			const char* what() const throw();
 		};
 		class GradeTooLowException : public std::exception
+		{
+			const char* what() const throw();
+		};
+		class FormNotSignedException : public std::exception
 		{
 			const char* what() const throw();
 		};
