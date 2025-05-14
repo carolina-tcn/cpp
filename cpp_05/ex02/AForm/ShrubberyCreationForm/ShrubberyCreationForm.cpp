@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 20:57:50 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/05/14 20:40:51 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/14 21:52:49 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,13 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target) :
     AForm("Shrubbery Creation Form", 145, 137), _target(target) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other) :
-    AForm("Shrubbery Creation Form", 145, 137), _target(other._target) {}
+    AForm(other), _target(other._target) {}
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other)
 {
     if (this != &other)
     {
+        AForm::operator=(other);
         _target = other._target;
     }
     return (*this);
