@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 17:26:05 by carolinatac       #+#    #+#             */
-/*   Updated: 2025/05/13 20:44:23 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/15 13:13:18 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ class	Bureaucrat
 		void				decrementGrade();
 		void				signForm(AForm &form);
 
-		//Exceptions
+		void				executeForm(AForm const &form);
+
 		class GradeTooHighException : public std::exception
 		{
 			public:

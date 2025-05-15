@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 20:57:53 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/05/14 21:23:26 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/15 12:56:14 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ class RobotomyRequestForm : public AForm
 {
     private:
         std::string _target;
+
     public:
         RobotomyRequestForm();
         RobotomyRequestForm(const std::string& target);
