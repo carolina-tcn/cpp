@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 16:52:34 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/05/20 18:21:48 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/20 20:52:29 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ class ScalarConverter
         ScalarConverter& operator=(const ScalarConverter &other);
         ~ScalarConverter();
 
-        static void convert(std::string literal);
+        static void convert(std::string input);
 };
