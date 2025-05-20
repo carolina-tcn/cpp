@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 17:26:08 by carolinatac       #+#    #+#             */
-/*   Updated: 2025/05/15 19:25:57 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/20 17:29:57 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,15 @@
 
 int	main()
 {
-	//Intern someRandomIntern;
-	//AForm* rrf;
-	//rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+	Intern someRandomIntern;
+	AForm* rrf;
+	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+
+    if (rrf)
+    {
+        std::cout << "Successfully created form: " << rrf->getName() << std::endl;
+        delete rrf;
+    }
 
 	Intern intern;
 	AForm* f1 = intern.makeForm("robotomy request", "Bender");

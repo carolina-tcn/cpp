@@ -6,11 +6,11 @@
 #    By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/06 17:25:48 by carolinatac       #+#    #+#              #
-#    Updated: 2025/05/20 16:52:21 by ctacconi         ###   ########.fr        #
+#    Updated: 2025/05/20 18:11:24 by ctacconi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = scalar_converter
+NAME = convert
 
 SRC = main.cpp ScalarConverter.cpp
 

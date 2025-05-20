@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 15:00:04 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/05/20 16:43:04 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/20 17:28:40 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,15 +46,15 @@ AForm*    Intern::makeForm(const std::string& formName, const std::string& targe
     switch (idx)
     {
     case 0:
-        std::cout << "Intern creates " << formName << std::endl;
+        std::cout << "Intern creates " << formName << "." << std::endl;
         return (new PresidentialPardonForm(target));
 
     case 1:
-        std::cout << "Intern creates " << formName << std::endl;
+        std::cout << "Intern creates " << formName << "." << std::endl;
         return (new RobotomyRequestForm(target));
 
     case 2:
-        std::cout << "Intern creates " << formName << std::endl;
+        std::cout << "Intern creates " << formName << "." << std::endl;
         return (new ShrubberyCreationForm(target));
 
 

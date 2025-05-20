@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 17:26:05 by carolinatac       #+#    #+#             */
-/*   Updated: 2025/05/13 20:34:53 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/20 17:35:58 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class	Bureaucrat
 {
 	private:
 		const std::string	_name;
-		int			_grade;
+		int					_grade;
 
 	public:
 		Bureaucrat();
