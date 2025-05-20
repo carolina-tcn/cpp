@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 17:26:08 by carolinatac       #+#    #+#             */
-/*   Updated: 2025/05/15 19:23:01 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/15 19:25:57 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,43 +15,28 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "Intern.hpp"
 
 int	main()
 {
-	try
-	{
-		ShrubberyCreationForm home("home");
-		PresidentialPardonForm minister("minister");
-		RobotomyRequestForm robot("robot");
-	
-		Bureaucrat oktorok("oktorok", 44);
-		Bureaucrat mafalda("mafalda", 137);
+	//Intern someRandomIntern;
+	//AForm* rrf;
+	//rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 
-		std::cout << home << std::endl;
-		std::cout << minister << std::endl;
-		std::cout << robot << std::endl;
+	Intern intern;
+	AForm* f1 = intern.makeForm("robotomy request", "Bender");
+	AForm* f2 = intern.makeForm("magic unicorn", "Nowhere");
 
-		home.beSigned(oktorok);
-		std::cout << home << std::endl;
-		home.execute(oktorok);
-		home.execute(mafalda);
-		
-		oktorok.signForm(robot);
-		mafalda.signForm(home);
-		mafalda.signForm(minister);
-		minister.execute(mafalda);
-		std::cout << mafalda << std::endl;
-		std::cout << minister << std::endl;
+	if (f1)
+    {
+        std::cout << "Successfully created form: " << f1->getName() << std::endl;
+        delete f1;
+    }
 
-		srand(time(NULL));
-		robot.beSigned(oktorok);
-		robot.execute(oktorok);
-		std::cout << robot << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	
+    if (!f2)
+    {
+        std::cout << "Failed to create unknown form." << std::endl;
+    }
+
 	return (0);
 }
