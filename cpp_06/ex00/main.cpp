@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 17:57:39 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/05/20 19:09:57 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/20 20:16:39 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,10 @@
 #include <iostream>
 #include <cstdlib>
 
-int main(int argc, char **argv)
+void    test()
 {
-    
-    if (argc != 1)
-        return (1);
-    test_arg(argv[1]);
-
-    //char
-    //int
-    //float
-    //double
-
     ScalarConverter::convert("0");
+    ScalarConverter::convert("aaa");
     ScalarConverter::convert("nan");
     ScalarConverter::convert("42.0f");
     ScalarConverter::convert("0");
@@ -34,7 +25,22 @@ int main(int argc, char **argv)
     ScalarConverter::convert("42");
     ScalarConverter::convert("a");
     ScalarConverter::convert("3636.5f");
-    ScalarConverter::convert(""); //double
+    ScalarConverter::convert("+inff");
+    ScalarConverter::convert("-inff"); //double
+    ScalarConverter::convert("2147483647");
+    ScalarConverter::convert("-2147483648");
+    ScalarConverter::convert("2147483650");
+    ScalarConverter::convert("-2147483650");
+}
+
+int main(int argc, char **argv)
+{
+    
+    if (argc != 2)
+        return (1);
+
+    ScalarConverter::convert(argv[1]);
+    test();
 
     return (0);
 }
