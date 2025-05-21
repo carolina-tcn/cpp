@@ -6,14 +6,11 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 17:57:39 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/05/21 17:16:17 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/21 18:19:41 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
-#include <iostream>
-#include <cstdlib>
-#include <iomanip> //setprecision(numero_de_digitos)
 
 void    test()
 {

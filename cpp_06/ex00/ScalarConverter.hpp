@@ -6,18 +6,19 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 16:52:34 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/05/21 18:12:57 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/21 18:20:28 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <string>
-#include <cstdlib>
-#include <iostream>
-#include <cctype>
+#include <cstdlib> //string to double, int, long, float...
+#include <iostream> //input output
+#include <cctype> //isalpha
+#include <iomanip> //setprecision(numero_de_digitos)
 
-#define ERR_ARGS "ERROR: the program needs one argument."  
+#define ERR_ARGS "ERROR: <./convert> <literal>"  
 
 // A static member function differs from a regular member function in that it can be 
 // called without an instance of a class, and since it has no instance, it cannot 
