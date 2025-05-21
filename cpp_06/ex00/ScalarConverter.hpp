@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 16:52:34 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/05/21 20:33:52 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/21 21:30:47 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,10 @@ class ScalarConverter
 
         static bool handlePseudoLiteral(const std::string& literal);
         static bool isChar(const std::string& literal);
-        static bool isNumber(const std::string& literal);
+        static bool isNumber(const std::string& literal, double &value);
+        //static bool isFloat(const double &value);
+        static void printConversion(const std::string& literal, const double &value);
+
 
     public:
         static void convert(const std::string& literal);

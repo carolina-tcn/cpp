@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 16:53:32 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/05/21 20:36:11 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/21 21:33:52 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,23 +75,39 @@ bool    ScalarConverter::isChar(const std::string& literal)
 //long int strtol (const char* str, char** endptr, int base);
 //double strtod (const char* str, char** endptr);
 //ERANGE Result too large (POSIX.1, C99).
-bool    ScalarConverter::isNumber(const std::string& literal)
+bool    ScalarConverter::isNumber(const std::string& literal, double &value)
 {
     char *end = NULL;
-    double d;
 
-    d = std::strtod(literal.c_str(), &end); // devuelve un const char* estilo C a partir de std::string
+    value = std::strtod(literal.c_str(), &end); // devuelve un const char* estilo C a partir de std::string
     if (*end != '\0')
         return (std::cout << "String literal doesn't have valid numbers." << std::endl, false);
-    if (errno == ERANGE || d > INT_MAX || d < INT_MIN)
+    if (errno == ERANGE)
         return (std::cout << ERR_OVERFLOW_UNDERFLOW << std::endl, false);
-    
-    std::cout << "Int conversion succeed: " << d << std::endl;
+
+    std::cout << "Number conversion succeed: " << value << std::endl;
     return (true);   
 }
 
+// bool    ScalarConverter::isFloat(const double &value)
+// {
+//     std::cout << "VALUE: " << value << std::endl;
+//     return (true);
+// }
+
+// void    ScalarConverter::printConversion(const std::string& literal, const double &value)
+// {
+//     std::cout << "char: " << std::endl;
+//     std::cout << "int: " << std::endl;
+//     std::cout << "float: " << std::setprecision(1) << "f" << std::endl;
+//     std::cout << "double: " << std::setprecision(1) << std::endl;
+
+// }
+
 void    ScalarConverter::convert(const std::string& literal)
 {
+    double  value;
+
     std::cout << "The literal is: " << literal << std::endl;
 
     size_t size_literal = literal.size();
@@ -99,9 +115,10 @@ void    ScalarConverter::convert(const std::string& literal)
 
     if (handlePseudoLiteral(literal))
         return ;
-    else if (isChar(literal))
+    if (isChar(literal))
         return ;
-    else if (isNumber(literal))
+    if (isNumber(literal, value))
         return ;
+    //printConversion(literal, value);
 }
 
