@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 16:53:32 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/05/21 17:34:08 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/21 18:17:06 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,16 +43,22 @@ ScalarConverter::~ScalarConverter() {}
 //3.convert explicitly to the 3 other types
 //4.display the results
 
+//not a number. infinito positivo/negativo, infinito float
 bool    ScalarConverter::handlePseudoLiteral(const std::string& literal)
 {
     if (literal == "nan" || literal == "nanf" || literal == "inf" ||
         literal == "+inf" || literal == "-inf" || literal == "inff" ||
         literal == "+inff" || literal == "-inff" )
     {
-        //print: impossible....
+        std::cout << "impossible" << std::endl;
         return (true);
     }
     return (false);
+}
+
+bool    ScalarConverter::isChar(const std::string& literal)
+{
+   return(literal.length() == 1 && isprint(literal[0]) && !isdigit(literal[0]));
 }
 
 void    ScalarConverter::convert(const std::string& literal)
@@ -63,6 +69,8 @@ void    ScalarConverter::convert(const std::string& literal)
     std::cout << size_literal << std::endl;
 
     if (handlePseudoLiteral(literal))
+        return ;
+    else if (!isChar(literal))
         return ;
 }
 

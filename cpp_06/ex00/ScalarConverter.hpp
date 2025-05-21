@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 16:52:34 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/05/21 17:33:01 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/21 18:12:57 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <string>
 #include <cstdlib>
 #include <iostream>
+#include <cctype>
 
 #define ERR_ARGS "ERROR: the program needs one argument."  
 
@@ -32,7 +33,8 @@ class ScalarConverter
         ScalarConverter& operator=(const ScalarConverter &other);
         ~ScalarConverter();
 
-        static bool    handlePseudoLiteral(const std::string& literal);
+        static bool handlePseudoLiteral(const std::string& literal);
+        static bool isChar(const std::string& literal);
 
     public:
         static void convert(const std::string& literal);
