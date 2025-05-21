@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 16:52:34 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/05/21 18:20:28 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/21 20:33:52 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,12 @@
 #include <iostream> //input output
 #include <cctype> //isalpha
 #include <iomanip> //setprecision(numero_de_digitos)
+#include <climits> //INT_MAX_MIN
+#include <cerrno> //errno
 
-#define ERR_ARGS "ERROR: <./convert> <literal>"  
+#define ERR_ARGS "ERROR: <./convert> <literal>"
+#define ERR_OVERFLOW_UNDERFLOW "ERROR: Overflow or underflow detected for int."
+#define ERR_INT_CONVERSION "ERROR: String literal doesn't have valid numbers."
 
 // A static member function differs from a regular member function in that it can be 
 // called without an instance of a class, and since it has no instance, it cannot 
@@ -36,6 +40,7 @@ class ScalarConverter
 
         static bool handlePseudoLiteral(const std::string& literal);
         static bool isChar(const std::string& literal);
+        static bool isNumber(const std::string& literal);
 
     public:
         static void convert(const std::string& literal);

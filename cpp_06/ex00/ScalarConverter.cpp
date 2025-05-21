@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 16:53:32 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/05/21 18:17:06 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/21 20:36:11 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ bool    ScalarConverter::handlePseudoLiteral(const std::string& literal)
         literal == "+inf" || literal == "-inf" || literal == "inff" ||
         literal == "+inff" || literal == "-inff" )
     {
-        std::cout << "impossible" << std::endl;
+        std::cout << "impossible bla bla bla" << std::endl;
         return (true);
     }
     return (false);
@@ -58,19 +58,50 @@ bool    ScalarConverter::handlePseudoLiteral(const std::string& literal)
 
 bool    ScalarConverter::isChar(const std::string& literal)
 {
-   return(literal.length() == 1 && isprint(literal[0]) && !isdigit(literal[0]));
+    //return(literal.length() == 1 && isprint(literal[0]) && !isdigit(literal[0]));
+    if (literal.length() == 1 && isprint(literal[0]) && !isdigit(literal[0]))
+    {
+        std::cout << "The string is a char: " << literal << std::endl;
+        return (true);
+    }
+    else
+    {
+        std::cout << "The string is not a char." << std::endl;
+        return (false);
+    }
+}
+
+//long int de 64 bits
+//long int strtol (const char* str, char** endptr, int base);
+//double strtod (const char* str, char** endptr);
+//ERANGE Result too large (POSIX.1, C99).
+bool    ScalarConverter::isNumber(const std::string& literal)
+{
+    char *end = NULL;
+    double d;
+
+    d = std::strtod(literal.c_str(), &end); // devuelve un const char* estilo C a partir de std::string
+    if (*end != '\0')
+        return (std::cout << "String literal doesn't have valid numbers." << std::endl, false);
+    if (errno == ERANGE || d > INT_MAX || d < INT_MIN)
+        return (std::cout << ERR_OVERFLOW_UNDERFLOW << std::endl, false);
+    
+    std::cout << "Int conversion succeed: " << d << std::endl;
+    return (true);   
 }
 
 void    ScalarConverter::convert(const std::string& literal)
 {
-    std::cout << literal << std::endl;
+    std::cout << "The literal is: " << literal << std::endl;
 
     size_t size_literal = literal.size();
-    std::cout << size_literal << std::endl;
+    std::cout << "Length of the string: " << size_literal << std::endl;
 
     if (handlePseudoLiteral(literal))
         return ;
-    else if (!isChar(literal))
+    else if (isChar(literal))
+        return ;
+    else if (isNumber(literal))
         return ;
 }
 
