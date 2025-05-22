@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 16:53:32 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/05/22 20:09:31 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/22 20:24:24 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,6 +123,26 @@ bool    ScalarConverter::validInput(const std::string& literal)
     return (false);
 }
 
+void    ScalarConverter::convertToChar(const std::string& literal)
+{
+
+}
+
+void    ScalarConverter::convertToInt(const std::string& literal)
+{
+    
+}
+
+void    ScalarConverter::convertToFloat(const std::string& literal)
+{
+    
+}
+
+void    ScalarConverter::convertToDouble(const std::string& literal)
+{
+    
+}
+
 void    ScalarConverter::convert(const std::string& literal)
 {
     if (!validInput(literal))
@@ -130,7 +150,9 @@ void    ScalarConverter::convert(const std::string& literal)
         std::cout << ERR_INVALID_INPUT << std::endl;
         return ;
     }
-
-    //printConversion(literal, value);
+    convertToChar(literal);
+    convertToInt(literal);
+    convertToFloat(literal);
+    convertToDouble(literal);
 }
 

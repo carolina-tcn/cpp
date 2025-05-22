@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 16:52:34 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/05/22 20:14:54 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/22 20:31:33 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,16 @@
 #define ERR_INVALID_INPUT "ERROR: invalid input."
 #define ERR_OVERFLOW_UNDERFLOW "ERROR: Overflow or underflow detected for int."
 #define ERR_INT_CONVERSION "ERROR: String literal doesn't have valid numbers."
+
+enum ScalarType
+{
+    CHAR,
+    INT,
+    FLOAT,
+    DOUBLE,
+    PSEUDO_LITERAL,
+    INVALID
+};
 
 // A static member function differs from a regular member function in that it can be 
 // called without an instance of a class, and since it has no instance, it cannot 
@@ -44,13 +54,11 @@ class ScalarConverter
         static bool isNumber(const std::string& literal, double &value);
         static bool validInput(const std::string& literal);
         //static bool isFloat(const double &value);
-
-        //static void printConversion(const std::string& literal, const double &value);
         
-        //static void convertToChar(const std::string& literal);
-        //static void convertToInt(const std::string& literal);
-        //static void convertToFloat(const std::string& literal);
-        //static void convertToDouble(const std::string& literal);
+        static void convertToChar(const std::string& literal);
+        static void convertToInt(const std::string& literal);
+        static void convertToFloat(const std::string& literal);
+        static void convertToDouble(const std::string& literal);
 
     public:
         static void convert(const std::string& literal);//convierte en los 3
