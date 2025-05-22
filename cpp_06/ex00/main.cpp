@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 17:57:39 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/05/21 20:29:56 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/22 19:42:21 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ int main(int argc, char **argv)
     if (argc != 2)
         return(std::cerr << ERR_ARGS << std::endl, EXIT_FAILURE);
 
-    ScalarConverter::convert(argv[1]);
+    std::string input(argv[1]);
+    ScalarConverter::convert(input);
     //test();
 
     return (0);

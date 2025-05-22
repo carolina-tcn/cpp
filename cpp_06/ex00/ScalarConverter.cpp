@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 16:53:32 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/05/21 21:33:52 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/22 20:09:31 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,12 @@ bool    ScalarConverter::isChar(const std::string& literal)
     //return(literal.length() == 1 && isprint(literal[0]) && !isdigit(literal[0]));
     if (literal.length() == 1 && isprint(literal[0]) && !isdigit(literal[0]))
     {
-        std::cout << "The string is a char: " << literal << std::endl;
+        std::cout << "The literal is a char: " << literal << std::endl;
         return (true);
     }
     else
     {
-        std::cout << "The string is not a char." << std::endl;
+        std::cout << "char: " << ERR_INVALID_INPUT << std::endl;
         return (false);
     }
 }
@@ -81,7 +81,7 @@ bool    ScalarConverter::isNumber(const std::string& literal, double &value)
 
     value = std::strtod(literal.c_str(), &end); // devuelve un const char* estilo C a partir de std::string
     if (*end != '\0')
-        return (std::cout << "String literal doesn't have valid numbers." << std::endl, false);
+        return (std::cout << "number: " << ERR_INVALID_INPUT << std::endl, false);
     if (errno == ERANGE)
         return (std::cout << ERR_OVERFLOW_UNDERFLOW << std::endl, false);
 
@@ -99,12 +99,13 @@ bool    ScalarConverter::isNumber(const std::string& literal, double &value)
 // {
 //     std::cout << "char: " << std::endl;
 //     std::cout << "int: " << std::endl;
-//     std::cout << "float: " << std::setprecision(1) << "f" << std::endl;
-//     std::cout << "double: " << std::setprecision(1) << std::endl;
+//     std::cout << "float: " << "f" << std::endl;
+//     std::cout << "double: " << std::endl;
 
 // }
 
-void    ScalarConverter::convert(const std::string& literal)
+
+bool    ScalarConverter::validInput(const std::string& literal)
 {
     double  value;
 
@@ -114,11 +115,22 @@ void    ScalarConverter::convert(const std::string& literal)
     std::cout << "Length of the string: " << size_literal << std::endl;
 
     if (handlePseudoLiteral(literal))
-        return ;
+        return (true);
     if (isChar(literal))
-        return ;
+        return (true);
     if (isNumber(literal, value))
+        return (true);
+    return (false);
+}
+
+void    ScalarConverter::convert(const std::string& literal)
+{
+    if (!validInput(literal))
+    {
+        std::cout << ERR_INVALID_INPUT << std::endl;
         return ;
+    }
+
     //printConversion(literal, value);
 }
 
