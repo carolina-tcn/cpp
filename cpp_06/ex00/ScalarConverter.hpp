@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 16:52:34 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/05/22 19:45:17 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/22 20:14:54 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,14 @@ class ScalarConverter
         static bool isChar(const std::string& literal);
         static bool isNumber(const std::string& literal, double &value);
         static bool validInput(const std::string& literal);
-
         //static bool isFloat(const double &value);
-        static void printConversion(const std::string& literal, const double &value);
-        //static void convertToChar();
-        //static void convertToInt();
-        //static void convertToFloat();
-        //static void convertToDouble();
+
+        //static void printConversion(const std::string& literal, const double &value);
+        
+        //static void convertToChar(const std::string& literal);
+        //static void convertToInt(const std::string& literal);
+        //static void convertToFloat(const std::string& literal);
+        //static void convertToDouble(const std::string& literal);
 
     public:
         static void convert(const std::string& literal);//convierte en los 3
