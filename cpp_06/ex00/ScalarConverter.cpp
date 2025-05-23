@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 16:53:32 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/05/22 20:24:24 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/23 18:40:47 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,18 +75,50 @@ bool    ScalarConverter::isChar(const std::string& literal)
 //long int strtol (const char* str, char** endptr, int base);
 //double strtod (const char* str, char** endptr);
 //ERANGE Result too large (POSIX.1, C99).
-bool    ScalarConverter::isNumber(const std::string& literal, double &value)
+bool    ScalarConverter::isNumber(const std::string& literal)
 {
-    char *end = NULL;
+    int dotCount = 0;
+    int start = 0;
+    int size = 0;
+    bool hasDigit = false;
 
-    value = std::strtod(literal.c_str(), &end); // devuelve un const char* estilo C a partir de std::string
-    if (*end != '\0')
-        return (std::cout << "number: " << ERR_INVALID_INPUT << std::endl, false);
-    if (errno == ERANGE)
-        return (std::cout << ERR_OVERFLOW_UNDERFLOW << std::endl, false);
+    if(literal.empty())
+        return (false);
+    
+    std::string toCheck = literal;
+    size = toCheck.length();
 
-    std::cout << "Number conversion succeed: " << value << std::endl;
-    return (true);   
+    if (toCheck[size - 1] == 'f')
+    {
+        toCheck = toCheck.substr(0, toCheck.length() - 1);
+        if (toCheck.empty() || toCheck.find('.') == std::string::npos)
+            return (false);
+    }
+
+    if(toCheck[0] == '-' || toCheck[0] == '+')
+        start = 1;
+    for(int i = start; i < size; ++i)
+    {
+        if(!std::isdigit(toCheck[i]) && toCheck[i] != '.')
+            return (false);
+        if (std::isdigit(toCheck[i]))
+            hasDigit = true;
+        if(toCheck[i] == '.')
+        {
+            dotCount++;
+            if(dotCount > 1)
+                return (false);
+        }
+    }
+    return (hasDigit);
+    // value = std::strtod(toCheck.c_str(), &end); // devuelve un const char* estilo C a partir de std::string
+    // if (*end != '\0')
+    //     return (std::cout << "number: " << ERR_INVALID_INPUT << std::endl, false);
+    // if (errno == ERANGE)
+    //     return (std::cout << ERR_OVERFLOW_UNDERFLOW << std::endl, false);
+
+    // std::cout << "Number conversion succeed: " << value << std::endl;
+    // return (true);   
 }
 
 // bool    ScalarConverter::isFloat(const double &value)
@@ -104,55 +136,61 @@ bool    ScalarConverter::isNumber(const std::string& literal, double &value)
 
 // }
 
+// void    ScalarConverter::convertToChar(const std::string& literal)
+// {
 
-bool    ScalarConverter::validInput(const std::string& literal)
+// }
+
+// void    ScalarConverter::convertToInt(const std::string& literal)
+// {
+    
+// }
+
+// void    ScalarConverter::convertToFloat(const std::string& literal)
+// {
+    
+// }
+
+// void    ScalarConverter::convertToDouble(const std::string& literal)
+// {
+    
+//}
+
+ScalarType  ScalarConverter::detectType(const std::string& literal)
 {
-    double  value;
-
     std::cout << "The literal is: " << literal << std::endl;
 
     size_t size_literal = literal.size();
     std::cout << "Length of the string: " << size_literal << std::endl;
 
     if (handlePseudoLiteral(literal))
-        return (true);
+        return (TYPE_PSEUDO);
     if (isChar(literal))
-        return (true);
-    if (isNumber(literal, value))
-        return (true);
-    return (false);
-}
-
-void    ScalarConverter::convertToChar(const std::string& literal)
-{
-
-}
-
-void    ScalarConverter::convertToInt(const std::string& literal)
-{
-    
-}
-
-void    ScalarConverter::convertToFloat(const std::string& literal)
-{
-    
-}
-
-void    ScalarConverter::convertToDouble(const std::string& literal)
-{
-    
+        return (TYPE_CHAR);
+    if (isNumber(literal))
+    {
+        return (VALID_NUMBER);
+       // if (literal.find('f') != std::string::npos)
+         //   return (TYPE_FLOAT);
+        //if (literal.find('.') != std::string::npos)
+          //  return (TYPE_DOUBLE);
+        //return (TYPE_INT);
+    }
+    return (TYPE_INVALID);
 }
 
 void    ScalarConverter::convert(const std::string& literal)
 {
-    if (!validInput(literal))
+    ScalarType inputType = detectType(literal);
+    if (inputType == TYPE_INVALID)
     {
         std::cout << ERR_INVALID_INPUT << std::endl;
         return ;
     }
-    convertToChar(literal);
-    convertToInt(literal);
-    convertToFloat(literal);
-    convertToDouble(literal);
+    // convertToChar(literal);
+    // convertToInt(literal);
+    // convertToFloat(literal);
+    // convertToDouble(literal);
+    std::cout << "OK" << std::endl;
 }
 

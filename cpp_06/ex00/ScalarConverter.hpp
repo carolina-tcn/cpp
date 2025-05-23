@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 16:52:34 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/05/22 20:31:33 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/23 17:54:12 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,13 @@
 
 enum ScalarType
 {
-    CHAR,
-    INT,
-    FLOAT,
-    DOUBLE,
-    PSEUDO_LITERAL,
-    INVALID
+    TYPE_CHAR,
+    TYPE_INT,
+    TYPE_FLOAT,
+    TYPE_DOUBLE,
+    TYPE_PSEUDO,
+    TYPE_INVALID,
+    VALID_NUMBER //TMP
 };
 
 // A static member function differs from a regular member function in that it can be 
@@ -51,16 +52,18 @@ class ScalarConverter
 
         static bool handlePseudoLiteral(const std::string& literal);
         static bool isChar(const std::string& literal);
-        static bool isNumber(const std::string& literal, double &value);
+        static bool isNumber(const std::string& literal);
         static bool validInput(const std::string& literal);
+        
+        static ScalarType   detectType(const std::string& literal);
+
         //static bool isFloat(const double &value);
         
-        static void convertToChar(const std::string& literal);
-        static void convertToInt(const std::string& literal);
-        static void convertToFloat(const std::string& literal);
-        static void convertToDouble(const std::string& literal);
+        // static void convertToChar(const std::string& literal);
+        // static void convertToInt(const std::string& literal);
+        // static void convertToFloat(const std::string& literal);
+        // static void convertToDouble(const std::string& literal);
 
     public:
-        static void convert(const std::string& literal);//convierte en los 3
-            //llamo a los 3 conversores en base al tipo.
+        static void convert(const std::string& literal);
 };
