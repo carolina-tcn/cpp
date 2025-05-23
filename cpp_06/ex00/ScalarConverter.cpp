@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 16:53:32 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/05/23 18:40:47 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/23 18:47:01 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,9 +94,10 @@ bool    ScalarConverter::isNumber(const std::string& literal)
         if (toCheck.empty() || toCheck.find('.') == std::string::npos)
             return (false);
     }
-
     if(toCheck[0] == '-' || toCheck[0] == '+')
         start = 1;
+
+    size = toCheck.length();
     for(int i = start; i < size; ++i)
     {
         if(!std::isdigit(toCheck[i]) && toCheck[i] != '.')
