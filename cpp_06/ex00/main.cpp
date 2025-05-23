@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 17:57:39 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/05/22 19:42:21 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/23 19:15:03 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void    test()
 {
     ScalarConverter::convert("0");
     ScalarConverter::convert("aaa");
+    ScalarConverter::convert("42.");
+    ScalarConverter::convert("-.5");
     ScalarConverter::convert("12323423423c");
     ScalarConverter::convert("123234234.45646546");
     ScalarConverter::convert("nan");

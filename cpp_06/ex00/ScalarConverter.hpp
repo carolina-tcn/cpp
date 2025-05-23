@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 16:52:34 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/05/23 17:54:12 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/23 19:15:36 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,7 @@ enum ScalarType
     TYPE_FLOAT,
     TYPE_DOUBLE,
     TYPE_PSEUDO,
-    TYPE_INVALID,
-    VALID_NUMBER //TMP
+    TYPE_INVALID
 };
 
 // A static member function differs from a regular member function in that it can be 

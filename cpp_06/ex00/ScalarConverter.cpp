@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 16:53:32 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/05/23 18:47:01 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/23 19:20:18 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,15 +128,6 @@ bool    ScalarConverter::isNumber(const std::string& literal)
 //     return (true);
 // }
 
-// void    ScalarConverter::printConversion(const std::string& literal, const double &value)
-// {
-//     std::cout << "char: " << std::endl;
-//     std::cout << "int: " << std::endl;
-//     std::cout << "float: " << "f" << std::endl;
-//     std::cout << "double: " << std::endl;
-
-// }
-
 // void    ScalarConverter::convertToChar(const std::string& literal)
 // {
 
@@ -170,12 +161,18 @@ ScalarType  ScalarConverter::detectType(const std::string& literal)
         return (TYPE_CHAR);
     if (isNumber(literal))
     {
-        return (VALID_NUMBER);
-       // if (literal.find('f') != std::string::npos)
-         //   return (TYPE_FLOAT);
-        //if (literal.find('.') != std::string::npos)
-          //  return (TYPE_DOUBLE);
-        //return (TYPE_INT);
+        if (literal.find('f') != std::string::npos)
+        {
+            std::cout << "FLOAT" << std::endl;
+           return (TYPE_FLOAT);
+        }
+        if (literal.find('.') != std::string::npos)
+          {
+            std::cout << "DOUBLE" << std::endl;
+          return (TYPE_DOUBLE);
+          }
+          std::cout <<"INT" << std::endl;
+        return (TYPE_INT);
     }
     return (TYPE_INVALID);
 }
