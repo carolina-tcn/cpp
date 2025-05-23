@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 16:53:32 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/05/23 19:20:18 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/23 19:49:43 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,17 +58,9 @@ bool    ScalarConverter::handlePseudoLiteral(const std::string& literal)
 
 bool    ScalarConverter::isChar(const std::string& literal)
 {
-    //return(literal.length() == 1 && isprint(literal[0]) && !isdigit(literal[0]));
     if (literal.length() == 1 && isprint(literal[0]) && !isdigit(literal[0]))
-    {
-        std::cout << "The literal is a char: " << literal << std::endl;
         return (true);
-    }
-    else
-    {
-        std::cout << "char: " << ERR_INVALID_INPUT << std::endl;
-        return (false);
-    }
+    return (false);
 }
 
 //long int de 64 bits
@@ -128,10 +120,25 @@ bool    ScalarConverter::isNumber(const std::string& literal)
 //     return (true);
 // }
 
-// void    ScalarConverter::convertToChar(const std::string& literal)
-// {
-
-// }
+void ScalarConverter::convertToChar(const std::string& literal, const ScalarType &inputType)
+{
+    std::cout << "char: ";
+    if (inputType == TYPE_CHAR)
+        std::cout << "'" << literal << "'";
+    else if (inputType == TYPE_PSEUDO)
+        std::cout << "impossible";
+    else
+    {
+        int value = std::atoi(literal.c_str());
+        if (value < 0 || value > 127)
+            std::cout << "impossible";
+        else if (!std::isprint(value))
+            std::cout << "Non displayable";
+        else
+            std::cout << "'" << static_cast<char>(value) << "'";
+    }
+    std::cout << std::endl;
+}
 
 // void    ScalarConverter::convertToInt(const std::string& literal)
 // {
@@ -185,10 +192,10 @@ void    ScalarConverter::convert(const std::string& literal)
         std::cout << ERR_INVALID_INPUT << std::endl;
         return ;
     }
-    // convertToChar(literal);
-    // convertToInt(literal);
-    // convertToFloat(literal);
-    // convertToDouble(literal);
+    convertToChar(literal, inputType);
+    // convertToInt(literal, inputType);
+    // convertToFloat(literal, inputType);
+    // convertToDouble(literal, inputType);
     std::cout << "OK" << std::endl;
 }
 

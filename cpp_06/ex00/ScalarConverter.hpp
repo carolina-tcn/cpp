@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 16:52:34 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/05/23 19:15:36 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/23 19:23:41 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ class ScalarConverter
 
         //static bool isFloat(const double &value);
         
-        // static void convertToChar(const std::string& literal);
+        static void convertToChar(const std::string& literal, const ScalarType &inputType);
         // static void convertToInt(const std::string& literal);
         // static void convertToFloat(const std::string& literal);
         // static void convertToDouble(const std::string& literal);
