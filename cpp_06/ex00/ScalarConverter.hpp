@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: carolinatacconis <carolinatacconis@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 16:52:34 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/05/23 19:23:41 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/26 16:21:27 by carolinatac      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,12 @@ class ScalarConverter
         static bool validInput(const std::string& literal);
         
         static ScalarType   detectType(const std::string& literal);
-
-        //static bool isFloat(const double &value);
+        static bool         doesOverFlow(const std::string& literal);
         
         static void convertToChar(const std::string& literal, const ScalarType &inputType);
-        // static void convertToInt(const std::string& literal);
-        // static void convertToFloat(const std::string& literal);
-        // static void convertToDouble(const std::string& literal);
+        static void convertToInt(const std::string& literal, const ScalarType &inputType);
+        static void convertToFloat(const std::string& literal, const ScalarType &inputType);
+        static void convertToDouble(const std::string& literal, const ScalarType &inputType);
 
     public:
         static void convert(const std::string& literal);
