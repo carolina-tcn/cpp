@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carolinatacconis <carolinatacconis@stud    +#+  +:+       +#+        */
+/*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 17:15:38 by carolinatac       #+#    #+#             */
-/*   Updated: 2025/05/26 18:04:23 by carolinatac      ###   ########.fr       */
+/*   Updated: 2025/05/27 18:36:35 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "B.hpp"
 #include "C.hpp"
 #include <iostream>
+#include <cstdlib>
 #include <ctime>
 
 Base* generate()
