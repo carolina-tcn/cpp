@@ -3,10 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: carolinatacconis <carolinatacconis@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 16:53:32 by ctacconi          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2025/05/23 19:56:04 by ctacconi         ###   ########.fr       */
+=======
+/*   Updated: 2025/05/26 16:21:24 by carolinatac      ###   ########.fr       */
+>>>>>>> 1291fdf15db714cbbea5d01578e318275a865204
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,20 +116,54 @@ void ScalarConverter::convertToChar(const std::string& literal, const ScalarType
     std::cout << std::endl;
 }
 
-// void    ScalarConverter::convertToInt(const std::string& literal)
-// {
-    
-// }
+bool         doesOverFlow(const std::string& literal)
+{
+    if (literal.length() > 11)
+        return (true);
+    long long int num = std::atoll(literal.c_str());
+    if (num < std::numeric_limits<int>::min() || num > std::numeric_limits<int>::max())
+        return (true);
+    return (false);
+}
 
-// void    ScalarConverter::convertToFloat(const std::string& literal)
-// {
-    
-// }
+void convertToInt(const std::string& literal, const ScalarType &inputType)
+{
+    char *end;
+    std::cout << "int: ";
+    if (inputType == TYPE_PSEUDO || doesOverFlow(literal))
+        std::cout << "impossible";
+    else if (inputType == TYPE_CHAR)
+        std::cout << static_cast<int>(literal[0]);
+    else
+        std::cout << std::atoi(literal.c_str());
+    std::cout << std::endl;
+}
 
-// void    ScalarConverter::convertToDouble(const std::string& literal)
-// {
-    
-//}
+void    ScalarConverter::convertToFloat(const std::string& literal, const ScalarType &inputType)
+{
+    std::cout.precision(1);
+	std::cout.setf(std::ios::fixed);
+	std::cout << "float: ";
+	if (inputType == TYPE_CHAR)
+		std::cout << static_cast<float>(literal[0]);
+	else
+		std::cout << static_cast<float>(std::atof(literal.c_str()));
+	std::cout << "f" << std::endl;
+	std::cout.unsetf(std::ios::fixed);
+}
+
+void    ScalarConverter::convertToDouble(const std::string& literal, const ScalarType &inputType)
+{
+    std::cout.precision(1);
+	std::cout.setf(std::ios::fixed);
+	std::cout << "double: ";
+	if (inputType == TYPE_CHAR)
+		std::cout << static_cast<double>(literal[0]);
+	else
+		std::cout << static_cast<double>(std::atof(literal.c_str()));
+	std::cout << std::endl;
+	std::cout.unsetf(std::ios::fixed);
+}
 
 ScalarType  ScalarConverter::detectType(const std::string& literal)
 {
@@ -160,9 +198,15 @@ void    ScalarConverter::convert(const std::string& literal)
         return ;
     }
     convertToChar(literal, inputType);
+<<<<<<< HEAD
     //convertToInt(literal, inputType);
     //convertToFloat(literal, inputType);
     //convertToDouble(literal, inputType);
     std::cout << "OK" << std::endl;
+=======
+    convertToInt(literal, inputType);
+    convertToFloat(literal, inputType);
+    convertToDouble(literal, inputType);
+>>>>>>> 1291fdf15db714cbbea5d01578e318275a865204
 }
 
