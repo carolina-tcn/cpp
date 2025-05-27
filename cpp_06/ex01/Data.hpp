@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carolinatacconis <carolinatacconis@stud    +#+  +:+       +#+        */
+/*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 16:41:45 by carolinatac       #+#    #+#             */
-/*   Updated: 2025/05/26 17:01:31 by carolinatac      ###   ########.fr       */
+/*   Updated: 2025/05/27 18:33:52 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

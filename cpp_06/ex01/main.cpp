@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carolinatacconis <carolinatacconis@stud    +#+  +:+       +#+        */
+/*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 16:55:47 by carolinatac       #+#    #+#             */
-/*   Updated: 2025/05/26 17:12:35 by carolinatac      ###   ########.fr       */
+/*   Updated: 2025/05/27 18:33:47 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

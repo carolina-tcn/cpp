@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carolinatacconis <carolinatacconis@stud    +#+  +:+       +#+        */
+/*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 16:27:11 by carolinatac       #+#    #+#             */
-/*   Updated: 2025/05/26 17:01:33 by carolinatac      ###   ########.fr       */
+/*   Updated: 2025/05/27 18:34:54 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ class Serializer
 		~Serializer();
 
 	public:
-	//tipo de dato entero sin signo, mismo tamaño que un ptr
 		static uintptr_t	serialize(Data* ptr);
 		static Data* 		deserialize(uintptr_t raw);
 };

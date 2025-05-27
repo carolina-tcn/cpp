@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Serializer.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carolinatacconis <carolinatacconis@stud    +#+  +:+       +#+        */
+/*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 16:47:31 by carolinatac       #+#    #+#             */
-/*   Updated: 2025/05/26 17:01:50 by carolinatac      ###   ########.fr       */
+/*   Updated: 2025/05/27 18:33:59 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
