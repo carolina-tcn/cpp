@@ -3,14 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carolinatacconis <carolinatacconis@stud    +#+  +:+       +#+        */
+/*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/20 16:53:32 by ctacconi          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2025/05/23 19:56:04 by ctacconi         ###   ########.fr       */
-=======
-/*   Updated: 2025/05/26 16:21:24 by carolinatac      ###   ########.fr       */
->>>>>>> 1291fdf15db714cbbea5d01578e318275a865204
+/*   Created: 2025/05/27 17:11:56 by ctacconi          #+#    #+#             */
+/*   Updated: 2025/05/27 18:09:09 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +27,6 @@ ScalarConverter& ScalarConverter::operator=(const ScalarConverter &other)
 
 ScalarConverter::~ScalarConverter() {}
 
-//1.detect type of the literal passed 
-//2.convert from string to actual type
-    double d = 42.0;
-    float f = static_cast<float>(d);
-    int i = static_cast<int>(d);
-    char c = static_cast<char>(d);
-//3.convert explicitly to the 3 other types
-//4.display the results
-
-//not a number. infinito positivo/negativo, infinito float
 bool    ScalarConverter::handlePseudoLiteral(const std::string& literal)
 {
     if (literal == "nan" || literal == "nanf" || literal == "inf" ||
@@ -116,19 +102,18 @@ void ScalarConverter::convertToChar(const std::string& literal, const ScalarType
     std::cout << std::endl;
 }
 
-bool         doesOverFlow(const std::string& literal)
+bool    ScalarConverter::doesOverFlow(const std::string& literal)
 {
     if (literal.length() > 11)
         return (true);
-    long long int num = std::atoll(literal.c_str());
-    if (num < std::numeric_limits<int>::min() || num > std::numeric_limits<int>::max())
+    long num = std::atol(literal.c_str());
+    if (num < INT_MIN || num > INT_MAX)
         return (true);
     return (false);
 }
 
-void convertToInt(const std::string& literal, const ScalarType &inputType)
+void    ScalarConverter::convertToInt(const std::string &literal, const ScalarType &inputType)
 {
-    char *end;
     std::cout << "int: ";
     if (inputType == TYPE_PSEUDO || doesOverFlow(literal))
         std::cout << "impossible";
@@ -174,16 +159,9 @@ ScalarType  ScalarConverter::detectType(const std::string& literal)
     if (isNumber(literal))
     {
         if (literal.find('f') != std::string::npos)
-        {
-            std::cout << "FLOAT" << std::endl;
-           return (TYPE_FLOAT);
-        }
+            return (TYPE_FLOAT);
         if (literal.find('.') != std::string::npos)
-          {
-            std::cout << "DOUBLE" << std::endl;
-          return (TYPE_DOUBLE);
-          }
-          std::cout <<"INT" << std::endl;
+            return (TYPE_DOUBLE);
         return (TYPE_INT);
     }
     return (TYPE_INVALID);
@@ -198,15 +176,8 @@ void    ScalarConverter::convert(const std::string& literal)
         return ;
     }
     convertToChar(literal, inputType);
-<<<<<<< HEAD
-    //convertToInt(literal, inputType);
-    //convertToFloat(literal, inputType);
-    //convertToDouble(literal, inputType);
-    std::cout << "OK" << std::endl;
-=======
     convertToInt(literal, inputType);
     convertToFloat(literal, inputType);
     convertToDouble(literal, inputType);
->>>>>>> 1291fdf15db714cbbea5d01578e318275a865204
 }
 

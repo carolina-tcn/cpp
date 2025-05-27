@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 17:57:39 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/05/23 19:57:58 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/27 18:31:16 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int main(int argc, char **argv)
 
     std::string input(argv[1]);
     ScalarConverter::convert(input);
-    //test();
+    test();
 
     return (0);
 }
