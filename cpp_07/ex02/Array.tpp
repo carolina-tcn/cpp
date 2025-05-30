@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 18:03:22 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/05/28 20:28:06 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/29 19:53:54 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Array<T>::Array(unsigned int n) : _array(new T[n]()), _n(n) {}
 template <typename T>
 Array<T>::Array(const Array<T>& other) : _array(new T[other._n]), _n(other._n)
 {
-    for(unsigned int i = 0; i < _n; ++i)
+    for(size_t i = 0; i < _n; ++i)
         _array[i] = other._array[i];
 }
 
@@ -31,7 +31,7 @@ Array<T>&  Array<T>::operator=(const Array<T>& other)
         delete[] _array;
         _n = other._n;
         _array = new T[_n];
-        for(unsigned int i = 0; i < _n; ++i)
+        for(size_t i = 0; i < _n; ++i)
             _array[i] = other._array[i];
     }
     return (*this);
@@ -44,23 +44,16 @@ Array<T>::~Array()
 }
 
 template <typename T>
-unsigned int  Array<T>::size() const
+size_t  Array<T>::size() const
 {
     return (_n);
 }
 
 template <typename T>
-T&  Array<T>::operator[](unsigned int idx)
+T&  Array<T>::operator[](size_t idx)
 {
     if (idx >= _n)
         throw std::out_of_range("Index out of bounds.");
     return (_array[idx]);
 }
 
-template <typename T>
-const T& Array<T>::operator[](unsigned int idx) const
-{
-    if (idx >= _n)
-        throw std::out_of_range("Index out of bounds.");
-    return (_array[idx]);
-}

@@ -1,37 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Array.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/28 17:43:30 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/05/29 19:54:08 by ctacconi         ###   ########.fr       */
+/*   Created: 2025/05/30 16:35:38 by ctacconi          #+#    #+#             */
+/*   Updated: 2025/05/30 19:25:37 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "easyfind.hpp"
 
-#include <stdexcept>
-#include <iostream>
-
-template <typename T>
-class   Array
+//vector, deque, list
+int main(void)
 {
-    private:
-        T*        _array;
-        size_t    _n;
+    std::vector<int>    vector;
+    std::deque<int>     deque;
+    std::list<int>      list;
 
-    public:
-        Array();
-        Array(unsigned int n);
-        Array(const Array& other);
-        Array& operator=(const Array& other);
-        ~Array();
+    vector.push_back(1);
+    vector.push_back(2);
+    vector.push_back(3);
+    vector.push_back(4);
 
-        size_t  size() const;
-
-        T&  operator[](size_t idx);
-};
-
-#include "Array.tpp"
+    easyfind(vector, 3);
+    
+    return (0);
+}

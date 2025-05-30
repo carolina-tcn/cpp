@@ -6,11 +6,11 @@
 #    By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/06 17:25:48 by carolinatac       #+#    #+#              #
-#    Updated: 2025/05/29 20:15:43 by ctacconi         ###   ########.fr        #
+#    Updated: 2025/05/30 16:35:01 by ctacconi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = array
+NAME = easyfind
 
 SRC = main.cpp
 
@@ -18,7 +18,7 @@ CC = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
-HEAD = Array.hpp
+HEAD = easyfind.hpp
 
 OBJ = $(SRC:.cpp=.o)
 
