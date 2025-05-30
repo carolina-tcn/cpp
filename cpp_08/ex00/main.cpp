@@ -6,7 +6,7 @@
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 16:35:38 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/05/30 19:25:37 by ctacconi         ###   ########.fr       */
+/*   Updated: 2025/05/30 20:12:35 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 //vector, deque, list
 int main(void)
 {
-    std::vector<int>    vector;
-    std::deque<int>     deque;
-    std::list<int>      list;
+    std::vector<int>    v;
+    std::deque<int>     d;
+    std::list<int>      l;
 
-    vector.push_back(1);
-    vector.push_back(2);
-    vector.push_back(3);
-    vector.push_back(4);
+    v.push_back(1);
+    v.push_back(2);
+    v.push_back(3);
+    v.push_back(4);
 
-    easyfind(vector, 3);
-    
+    easyfind(v, 3);
+
     return (0);
 }
