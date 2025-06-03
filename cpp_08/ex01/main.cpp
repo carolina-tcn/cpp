@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/30 16:36:20 by ctacconi          #+#    #+#             */
-/*   Updated: 2025/06/03 16:43:13 by ctacconi         ###   ########.fr       */
+/*   Created: 2025/06/03 17:22:33 by ctacconi          #+#    #+#             */
+/*   Updated: 2025/06/03 17:34:14 by ctacconi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Span.hpp"
 
-#include <iostream>
-#include <vector>
-#include <deque>
-#include <list>
-#include <iterator>
-#include <algorithm>
-
-template <typename T>
-typename T::const_iterator    easyfind(const T& cont, int num)
+int main()
 {
-    typename T::const_iterator it = std::find(cont.begin(), cont.end(), num);
-    if (it == cont.end())
-        throw std::runtime_error("Value not found.");
-    return (it);
+    Span sp = Span(5);
+    sp.addNumber(6);
+    sp.addNumber(3);
+    sp.addNumber(17);
+    sp.addNumber(9);
+    sp.addNumber(11);
+    
+    std::cout << sp.shortestSpan() << std::endl;
+    std::cout << sp.longestSpan() << std::endl;
+    
+    return (0);
 }
