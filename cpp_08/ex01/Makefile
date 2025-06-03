@@ -6,11 +6,11 @@
 #    By: ctacconi <ctacconi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/06 17:25:48 by carolinatac       #+#    #+#              #
-#    Updated: 2025/06/03 17:21:53 by ctacconi         ###   ########.fr        #
+#    Updated: 2025/06/03 18:25:39 by ctacconi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = span
+NAME = ex01
 
 SRC = main.cpp Span.cpp
 
